@@ -1,0 +1,17 @@
+[
+ {
+  "id": 0,
+  "name": "Evidence Support Score",
+  "description": "This function counts the number of times the word 'evidence' or its variations (like 'evidences') appear in the text. It returns a float representing this count, which indicates how much emphasis is placed on the concept of evidence in the text.",
+  "code": "def score(text: str) -> float:\n    import re\n    return float(len(re.findall(r'\\bevidence\\b|\\bevidences\\b', text.lower())))",
+  "status": "pending",
+  "sample_values": [
+   0.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0
+  ],
+  "versions": []
+ }
+]

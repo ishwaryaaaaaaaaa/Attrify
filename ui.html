@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AttriFy reproduction</title>
+<style>
+  :root { --bg:#f6f7f9; --panel:#fff; --ink:#1c2230; --muted:#667085; --line:#e3e6ec;
+          --open:#3b6fd4; --clarify:#d9822b; --suggest:#2f9e6e; --accept:#2f9e6e; --reject:#c4453b;
+          --warn:#b7791f; --warnbg:#fdf3dc; --noise:#c3c8d2; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#12151c; --panel:#1b2029; --ink:#e6e9f0; --muted:#8b93a5;
+          --line:#2c3340; --open:#6f9bff; --clarify:#f0a45a; --suggest:#58c89a; --accept:#58c89a;
+          --reject:#ef7a70; --warn:#e8b24f; --warnbg:#3a3120; --noise:#4a5160; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:14px/1.45 system-ui,-apple-system,Segoe UI,sans-serif; }
+  header { padding:10px 16px; display:flex; gap:12px; align-items:center; flex-wrap:wrap; border-bottom:1px solid var(--line); }
+  header h1 { font-size:16px; margin:0; }
+  .banner { background:var(--warnbg); color:var(--warn); padding:2px 8px; border-radius:6px; font-size:12px; }
+  main { display:grid; grid-template-columns:1fr 1fr; gap:12px; padding:12px 16px; }
+  @media (max-width:900px) { main { grid-template-columns:1fr; } }
+  section { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:12px; min-width:0; overflow:auto; }
+  section h2 { font-size:13px; margin:0 0 8px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; }
+  button { font:inherit; border:1px solid var(--line); background:var(--panel); color:var(--ink); border-radius:6px; padding:4px 10px; cursor:pointer; }
+  button.primary { background:var(--open); color:#fff; border-color:var(--open); }
+  button:disabled { opacity:.5; cursor:not-allowed; }
+  textarea, select, input[type=text] { font:inherit; width:100%; background:var(--bg); color:var(--ink); border:1px solid var(--line); border-radius:6px; padding:6px; }
+  .q { background:var(--bg); border-left:3px solid var(--open); padding:8px 10px; border-radius:4px; margin:8px 0; }
+  .q.clarify { border-color:var(--clarify); } .q.suggest { border-color:var(--suggest); }
+  .row { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:6px; }
+  .card { border:1px solid var(--line); border-radius:8px; padding:8px 10px; margin:8px 0; }
+  .card h3 { margin:0 0 4px; font-size:14px; }
+  .muted { color:var(--muted); font-size:12px; }
+  .warn { background:var(--warnbg); color:var(--warn); padding:4px 8px; border-radius:6px; font-size:12px; margin:4px 0; }
+  pre { background:var(--bg); padding:8px; border-radius:6px; overflow:auto; font-size:12px; margin:6px 0; }
+  .zero { color:var(--warn); font-weight:600; }
+  table { border-collapse:collapse; font-size:12px; width:100%; }
+  th, td { border-bottom:1px solid var(--line); padding:3px 6px; text-align:left; vertical-align:bottom; }
+  td.num { text-align:right; font-variant-numeric:tabular-nums; }
+  svg text { fill:var(--muted); font-size:10px; }
+  .legend span { margin-right:10px; font-size:12px; }
+  .dot { display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:4px; }
+  #err { color:var(--reject); font-size:12px; min-height:16px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>AttriFy reproduction</h1>
+  <select id="mode" style="width:auto" title="Condition"><option value="attrify">AttriFy (softness-guided)</option><option value="baseline">Baseline (plain chat)</option></select>
+  <select id="genre" style="width:auto"><option>argumentative</option><option>narrative</option></select>
+  <button class="primary" id="startBtn">Start new session</button>
+  <span id="synth" class="banner" hidden>Synthetic demo corpus: for testing only</span>
+  <span id="err"></span>
+</header>
+<main>
+  <section id="chat"><h2>A. Chat</h2><div id="chatBody" class="muted">Press "Start new session".</div></section>
+  <section id="hist"><h2>B. Interaction history</h2><div id="histBody" class="muted">No turns yet.</div></section>
+  <section id="tbl"><h2>C. Attribute table</h2><div id="tblBody" class="muted">No accepted attributes yet.</div></section>
+  <section id="cov"><h2>D. Coverage graph</h2><div id="covBody" class="muted">Appears after the first accepted attribute.</div></section>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+const NS = "http://www.w3.org/2000/svg";
+let S = null, selTurn = null, selFunc = null, showDetails = {}, refining = {}, busy = false;
+const COL = { open_ended: "var(--open)", clarify: "var(--clarify)", suggest: "var(--suggest)", chat: "var(--muted)" };
+const STOP = new Set("i a an the and or of to in is it that this be are was for on with as my me but not so at by if i'm i'd just like really very want mean".split(" "));
+
+function el(tag, attrs = {}, ...kids) {           // all text goes through textContent: model output is untrusted
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") e.className = v; else if (k.startsWith("on")) e[k] = v; else e.setAttribute(k, v);
+  }
+  for (const c of kids.flat()) if (c != null) e.append(c.nodeType ? c : document.createTextNode(String(c)));
+  return e;
+}
+function svg(tag, attrs = {}, text) {
+  const e = document.createElementNS(NS, tag);
+  for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v);
+  if (text != null) e.textContent = text;
+  return e;
+}
+const keywords = t => (t || "").toLowerCase().replace(/[^a-z0-9' ]/g, " ").split(/\s+/).filter(w => w.length > 2 && !STOP.has(w)).slice(0, 3).join(" ");
+
+async function api(path, body) {
+  $("err").textContent = ""; busy = true; render();
+  try {
+    const r = await fetch(path, body === undefined ? {} : { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.detail || r.statusText);
+    S = j; return j;
+  } catch (e) { $("err").textContent = e.message; }
+  finally { busy = false; render(); }
+}
+
+function renderChat() {
+  const b = $("chatBody"); b.replaceChildren();
+  if (!S) { b.append("Press \"Start new session\"."); return; }
+  const pendingFns = S.functions.filter(f => S.pending.includes(f.id));
+  const fails = S.last && S.last.failures.length ? ` (${S.last.failures.length} generation failure(s))` : "";
+  if (S.last) b.append(el("div", { class: "muted" }, (S.last.score == null ? "Baseline: functions are generated after every turn" : `Last answer: softness ${S.last.score} → ${S.last.action.replaceAll("_", " ")}`) + fails));
+  if (S.current_question) {
+    const t = S.turns[S.turns.length - 1];
+    b.append(el("div", { class: "q " + (t.qtype === "open_ended" || t.qtype === "chat" ? "" : t.qtype) }, S.current_question));
+  }
+  if (pendingFns.length) {
+    b.append(el("div", { class: "muted" }, "Review every proposed attribute before continuing."));
+    pendingFns.forEach(f => b.append(card(f)));
+    return;
+  }
+  if (S.current_question) {
+    const ta = el("textarea", { rows: "3", placeholder: "Your answer…" });
+    const send = el("button", { class: "primary", onclick: async () => { const v = ta.value.trim(); if (v) await api("/api/answer", { text: v }); } }, "Send");
+    send.disabled = busy;
+    const row = el("div", { class: "row" }, send);
+    if (S.mode === "baseline") b.append(el("div", { class: "muted" }, "Baseline condition: plain chat, no softness guidance."));
+    if (S.can_skip) row.append(el("button", { onclick: () => api("/api/skip", {}) }, "Skip this topic"));
+    b.append(ta, row);
+  }
+  if (busy) b.append(el("div", { class: "muted" }, "Working…"));
+}
+
+function card(f) {
+  const c = el("div", { class: "card" }, el("h3", {}, f.name), el("div", {}, f.description));
+  f.warnings.forEach(w => c.append(el("div", { class: "warn" }, w)));
+  const nz = f.samples.filter(v => v !== 0).length;
+  c.append(el("div", { class: "muted" }, `Sample values: ${f.samples.map(v => Number(v.toFixed(2))).join(", ")}  (${nz}/${f.samples.length} non-zero)`));
+  if (nz < f.samples.length / 2) c.append(el("div", { class: "warn" }, "Most sample values are zero: check this really measures what you mean before accepting."));
+  if (showDetails[f.id]) c.append(el("pre", {}, f.code));
+  const row = el("div", { class: "row" },
+    el("button", { onclick: () => api("/api/review", { fid: f.id, decision: "accept" }) }, "Accept"),
+    el("button", { onclick: () => api("/api/review", { fid: f.id, decision: "reject" }) }, "Reject"),
+    el("button", { onclick: () => { refining[f.id] = !refining[f.id]; render(); } }, "Refine"),
+    el("button", { onclick: () => { showDetails[f.id] = !showDetails[f.id]; render(); } }, showDetails[f.id] ? "Hide details" : "Details"));
+  c.append(row);
+  if (refining[f.id]) {
+    const inp = el("input", { type: "text", placeholder: "What should change?" });
+    c.append(el("div", { class: "row" }, inp, el("button", { class: "primary", onclick: async () => { if (inp.value.trim()) { refining[f.id] = false; await api("/api/review", { fid: f.id, decision: "refine", feedback: inp.value.trim() }); } } }, "Submit")));
+  }
+  return c;
+}
+
+function renderHist() {
+  const b = $("histBody"); b.replaceChildren();
+  if (!S || !S.turns.length) { b.append("No turns yet."); return; }
+  const stepX = 70, W = Math.max(320, S.turns.length * stepX + 40), top = 16, H = 150, base = top + H;
+  const nCards = Math.max(1, ...S.turns.map(t => S.functions.filter(f => f.turn === t.i).length));
+  const svgEl = svg("svg", { width: W, height: base + 24 + nCards * 16, viewBox: `0 0 ${W} ${base + 24 + nCards * 16}` });
+  svgEl.append(svg("line", { x1: 20, x2: W - 10, y1: base, y2: base, stroke: "var(--line)" }), svg("text", { x: 2, y: base - 2 }, "0"), svg("text", { x: 2, y: top + 8 }, "100"));
+  let prev = null;
+  S.turns.forEach(t => {
+    const x = 40 + t.i * stepX;
+    const fns = S.functions.filter(f => f.turn === t.i);
+    const baseline = S.mode === "baseline";                    // no softness in the baseline: fixed height
+    if (t.softness == null && !(baseline && t.answer)) { svgEl.append(svg("circle", { cx: x, cy: top, r: 5, fill: "none", stroke: COL[t.qtype] })); return; }
+    const y = baseline ? top + H / 2 : top + (100 - t.softness) / 100 * H;
+    if (prev) svgEl.append(svg("line", { x1: prev.x, y1: prev.y, x2: x, y2: y, stroke: "var(--line)" }));
+    prev = { x, y };
+    if (fns.length) svgEl.append(svg("line", { x1: x, y1: y, x2: x, y2: base, stroke: "var(--muted)", "stroke-dasharray": "3 3" }));
+    const n = svg("circle", { cx: x, cy: y, r: t.i === selTurn ? 9 : 7, fill: COL[t.qtype], style: "cursor:pointer" });
+    n.onclick = () => { selTurn = t.i; selFunc = null; render(); };
+    svgEl.append(n, svg("text", { x: x - 24, y: y - 11 }, `${t.softness ?? ""} ${keywords(t.answer)}`.trim().slice(0, 16)));
+    fns.forEach((f, k) => {
+      const col = f.status === "accepted" ? "var(--accept)" : f.status === "rejected" ? "var(--reject)" : f.status === "refined" ? "var(--muted)" : "var(--warn)";
+      const r = svg("rect", { x: x - 6, y: base + 6 + k * 16, width: 12, height: 12, rx: 2, fill: col, style: "cursor:pointer" });
+      r.onclick = () => { selFunc = f.id; selTurn = null; render(); };
+      svgEl.append(r);
+    });
+  });
+  b.append(svgEl, el("div", { class: "legend" },
+    ...[["open_ended", "open-ended"], ["clarify", "clarifying"], ["suggest", "suggestion"], ["chat", "baseline chat"]].map(([k, l]) => el("span", {}, el("span", { class: "dot", style: `background:${COL[k]}` }), l)),
+    el("span", { class: "muted" }, "Height = softness. Squares at the bottom = proposed functions (green accepted, red rejected, amber pending).")));
+  if (selTurn != null && S.turns[selTurn]) {
+    const t = S.turns[selTurn];
+    b.append(el("div", { class: "card" }, el("div", { class: "muted" }, `Turn ${t.i + 1} · ${t.qtype} · softness ${t.softness ?? "n/a"}`), el("div", {}, "Q: " + t.question), el("div", {}, "A: " + (t.answer || "(unanswered)"))));
+  }
+  if (selFunc != null) {
+    const f = S.functions.find(x => x.id === selFunc);
+    if (f) {
+      const c = el("div", { class: "card" }, el("h3", {}, f.name), el("div", { class: "muted" }, "status: " + f.status), el("div", {}, f.description));
+      if (f.status === "accepted" || f.status === "rejected") {
+        const want = f.status === "accepted" ? "reject" : "accept";
+        c.append(el("div", { class: "row" }, el("button", { onclick: () => api("/api/revisit", { fid: f.id, decision: want }) }, want === "reject" ? "Change to rejected" : "Change to accepted")));
+      }
+      b.append(c);
+    }
+  }
+}
+
+function renderTable() {
+  const b = $("tblBody"); b.replaceChildren();
+  if (!S || !S.table.names.length) { b.append("No accepted attributes yet."); return; }
+  const T = S.table, tb = el("table");
+  const head = el("tr", {}, el("th", {}, "essay"));
+  T.names.forEach((n, j) => {
+    const h = T.hists[j], mx = Math.max(...h.counts, 1), w = 60, hh = 24;
+    const s = svg("svg", { width: w, height: hh });
+    h.counts.forEach((c, i) => s.append(svg("rect", { x: i * (w / h.counts.length), y: hh - c / mx * hh, width: w / h.counts.length - 1, height: c / mx * hh, fill: "var(--open)" })));
+    head.append(el("th", {}, s, el("div", {}, n)));
+  });
+  tb.append(head);
+  T.rows.forEach(r => tb.append(el("tr", {}, el("td", {}, r.text), ...r.values.map(v => el("td", { class: "num" }, Number(v.toFixed(2)))))));
+  b.append(tb, el("div", { class: "muted" }, `First ${T.rows.length} of ${S.n_essays} essays shown; histograms cover all.`));
+}
+
+function renderCov() {
+  const b = $("covBody"); b.replaceChildren();
+  if (!S || !S.coverage.points.length) { b.append("Appears after the first accepted attribute."); return; }
+  const { points, labels, largest } = S.coverage, W = 340, H = 260, pad = 14;
+  const xs = points.map(p => p[0]), ys = points.map(p => p[1]);
+  const sc = (v, lo, hi, n) => pad + (hi === lo ? 0.5 : (v - lo) / (hi - lo)) * (n - 2 * pad);
+  const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
+  const s = svg("svg", { width: W, height: H, viewBox: `0 0 ${W} ${H}` });
+  points.forEach((p, i) => {
+    const noise = labels[i] < 0, big = labels[i] === largest;
+    s.append(svg("circle", { cx: sc(p[0], x0, x1, W), cy: H - sc(p[1], y0, y1, H), r: big ? 4.5 : 3.2, fill: noise ? "var(--noise)" : big ? "var(--clarify)" : "var(--open)", opacity: noise ? .6 : .85 }));
+  });
+  const nCl = new Set(labels.filter(l => l >= 0)).size;
+  b.append(s, el("div", { class: "muted" }, `${nCl} cluster(s); orange = largest (its essays seed the next open-ended question); grey = noise.`));
+}
+
+function render() {
+  $("synth").hidden = !(S && S.synthetic);
+  $("startBtn").disabled = busy;
+  renderChat(); renderHist(); renderTable(); renderCov();
+}
+$("startBtn").onclick = () => { selTurn = selFunc = null; showDetails = {}; refining = {}; api("/api/session", { genre: $("genre").value, mode: $("mode").value }); };
+render();
+</script>
+</body>
+</html>

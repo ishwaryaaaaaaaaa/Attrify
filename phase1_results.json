@@ -1,0 +1,1528 @@
+{
+ "descriptions": [
+  {
+   "text": "the essay uses correct verb forms",
+   "score": 49,
+   "run_scores": [
+    44,
+    57,
+    46
+   ],
+   "specification": "the essay uses correct verb forms",
+   "readings": [
+    [
+     {
+      "attribute_label": "correct verb form usage",
+      "full_description": "identify and count the instances of correct verb forms used throughout the essay."
+     },
+     {
+      "attribute_label": "verb form accuracy",
+      "full_description": "evaluate the percentage of verb forms used correctly compared to total verb forms in the essay."
+     },
+     {
+      "attribute_label": "verb form consistency",
+      "full_description": "assess the consistent application of verb forms across the essay, noting any shifts between tenses."
+     },
+     {
+      "attribute_label": "frequency of correct verbs",
+      "full_description": "count the total number of correct verb forms used in each paragraph of the essay."
+     },
+     {
+      "attribute_label": "variety of verb forms",
+      "full_description": "analyze the range of different verb forms used, measuring the diversity of correct verbs in the essay."
+     },
+     {
+      "attribute_label": "correct past tense usage",
+      "full_description": "check for the accurate use of past tense verb forms and their appropriateness to the context in the essay."
+     },
+     {
+      "attribute_label": "correct present tense usage",
+      "full_description": "identify and assess the correct application of present tense verb forms within the essay."
+     },
+     {
+      "attribute_label": "subject-verb agreement",
+      "full_description": "evaluate the instances of subject-verb agreement throughout the essay, noting any errors."
+     },
+     {
+      "attribute_label": "correct future tense usage",
+      "full_description": "check for the accurate use of future tense verb forms in the essay and their contextual relevance."
+     },
+     {
+      "attribute_label": "overall verb form correctness",
+      "full_description": "assign a score based on the overall correctness of verb forms used throughout the entirety of the essay."
+     }
+    ],
+    [
+     {
+      "attribute_label": "correct verb form usage",
+      "full_description": "the writing contains no instances of incorrect verb forms."
+     },
+     {
+      "attribute_label": "subject-verb agreement",
+      "full_description": "all verbs agree in number and person with their subjects throughout the text."
+     },
+     {
+      "attribute_label": "tense consistency",
+      "full_description": "the essay maintains consistent verb tense throughout each paragraph."
+     },
+     {
+      "attribute_label": "correct auxiliary verbs",
+      "full_description": "the writing correctly uses auxiliary verbs in all relevant instances."
+     },
+     {
+      "attribute_label": "verb form errors",
+      "full_description": "the total number of incorrect verb forms identified in the writing does not exceed two."
+     },
+     {
+      "attribute_label": "active voice usage",
+      "full_description": "the majority of verbs are used in active voice rather than passive voice."
+     },
+     {
+      "attribute_label": "correct participial forms",
+      "full_description": "all participles are used correctly in their grammatical context throughout the essay."
+     },
+     {
+      "attribute_label": "modal verb accuracy",
+      "full_description": "modal verbs are employed correctly in all relevant contexts across the text."
+     },
+     {
+      "attribute_label": "verb form variety",
+      "full_description": "the text demonstrates a diverse use of verb forms and structures without repetition."
+     },
+     {
+      "attribute_label": "overall verb accuracy",
+      "full_description": "the essay is evaluated for overall accuracy in verb usage across all sentences."
+     }
+    ],
+    [
+     {
+      "attribute_label": "correct verb form usage",
+      "full_description": "the essay consistently uses correct verb forms throughout the entire text."
+     },
+     {
+      "attribute_label": "verb form errors count",
+      "full_description": "the essay contains fewer than three instances of incorrect verb forms."
+     },
+     {
+      "attribute_label": "past tense verb accuracy",
+      "full_description": "the essay uses correct past tense verb forms in at least 90% of applicable instances."
+     },
+     {
+      "attribute_label": "present tense verb accuracy",
+      "full_description": "the essay uses correct present tense verb forms in at least 90% of applicable instances."
+     },
+     {
+      "attribute_label": "future tense verb accuracy",
+      "full_description": "the essay uses correct future tense verb forms in at least 90% of applicable instances."
+     },
+     {
+      "attribute_label": "subject-verb agreement",
+      "full_description": "the essay demonstrates correct subject-verb agreement in all sentences."
+     },
+     {
+      "attribute_label": "modal verb usage correctness",
+      "full_description": "the essay uses modal verbs correctly in at least 90% of applicable contexts."
+     },
+     {
+      "attribute_label": "passive voice usage",
+      "full_description": "the essay uses passive voice correctly in all instances where it is applied."
+     },
+     {
+      "attribute_label": "verb form variety",
+      "full_description": "the essay employs at least five different correct verb forms throughout the text."
+     },
+     {
+      "attribute_label": "verb tense consistency",
+      "full_description": "the essay maintains consistent verb tense throughout without shifting between past, present, and future unnecessarily."
+     }
+    ]
+   ]
+  },
+  {
+   "text": "the essay has an introduction, a body and a conclusion",
+   "score": 59,
+   "run_scores": [
+    65,
+    57,
+    55
+   ],
+   "specification": "the essay has an introduction, a body and a conclusion",
+   "readings": [
+    [
+     {
+      "attribute_label": "presence of introduction",
+      "full_description": "the writing contains a distinct introductory paragraph."
+     },
+     {
+      "attribute_label": "presence of body",
+      "full_description": "the writing includes a main body section with supporting details."
+     },
+     {
+      "attribute_label": "presence of conclusion",
+      "full_description": "the writing concludes with a separate concluding paragraph."
+     },
+     {
+      "attribute_label": "structure completeness",
+      "full_description": "the writing consists of an introduction, a body, and a conclusion as three distinct sections."
+     },
+     {
+      "attribute_label": "introduction length",
+      "full_description": "the introductory paragraph has a minimum length of three sentences."
+     },
+     {
+      "attribute_label": "body length",
+      "full_description": "the body section contains at least five distinct paragraphs."
+     },
+     {
+      "attribute_label": "conclusion clarity",
+      "full_description": "the concluding paragraph clearly summarizes the main points discussed in the body."
+     },
+     {
+      "attribute_label": "introductory hook",
+      "full_description": "the introduction includes an engaging hook or statement to capture interest."
+     },
+     {
+      "attribute_label": "body coherence",
+      "full_description": "the body is organized into clear subsections that flow logically from one to another."
+     },
+     {
+      "attribute_label": "conclusion reinforcement",
+      "full_description": "the conclusion restates the thesis and provides final thoughts or implications."
+     }
+    ],
+    [
+     {
+      "attribute_label": "presence of introduction",
+      "full_description": "the structure includes a clear introductory paragraph that outlines the main topic."
+     },
+     {
+      "attribute_label": "presence of body",
+      "full_description": "the structure includes a body section that develops the main ideas and arguments."
+     },
+     {
+      "attribute_label": "presence of conclusion",
+      "full_description": "the structure includes a conclusion paragraph that summarizes the key points and provides closure."
+     },
+     {
+      "attribute_label": "introduction length",
+      "full_description": "the introduction consists of at least three sentences that establish the context of the topic."
+     },
+     {
+      "attribute_label": "body length",
+      "full_description": "the body section contains a minimum of five paragraphs that elaborate on the main arguments."
+     },
+     {
+      "attribute_label": "conclusion length",
+      "full_description": "the conclusion consists of at least two sentences that restate the main arguments and give final thoughts."
+     },
+     {
+      "attribute_label": "introduction relevance",
+      "full_description": "the introduction adequately introduces the topic and provides a thesis statement."
+     },
+     {
+      "attribute_label": "body coherence",
+      "full_description": "the body contains logical transitions between paragraphs that support the flow of ideas."
+     },
+     {
+      "attribute_label": "conclusion effectiveness",
+      "full_description": "the conclusion effectively summarizes the arguments and leaves a lasting impression on the reader."
+     },
+     {
+      "attribute_label": "complete structure",
+      "full_description": "the structure contains all three components: an introduction, a body, and a conclusion."
+     }
+    ],
+    [
+     {
+      "attribute_label": "introduction presence",
+      "full_description": "the text includes a distinct introductory paragraph that outlines the main topic."
+     },
+     {
+      "attribute_label": "body presence",
+      "full_description": "the text contains a central body section that develops the main arguments or points."
+     },
+     {
+      "attribute_label": "conclusion presence",
+      "full_description": "the text concludes with a dedicated paragraph that summarizes the main ideas."
+     },
+     {
+      "attribute_label": "three-part structure",
+      "full_description": "the text is organized into at least an introduction, a body, and a conclusion."
+     },
+     {
+      "attribute_label": "introduction length",
+      "full_description": "the introductory paragraph is a minimum of three sentences long."
+     },
+     {
+      "attribute_label": "body paragraph count",
+      "full_description": "the body contains at least two distinct paragraphs."
+     },
+     {
+      "attribute_label": "conclusion length",
+      "full_description": "the concluding paragraph is at least three sentences long."
+     },
+     {
+      "attribute_label": "introduction relevance",
+      "full_description": "the introduction adequately reflects the main topic of the text."
+     },
+     {
+      "attribute_label": "conclusion relevance",
+      "full_description": "the conclusion effectively summarizes the content and provides closure."
+     },
+     {
+      "attribute_label": "body coherence",
+      "full_description": "the body logically connects the arguments presented in the introduction and conclusion."
+     }
+    ]
+   ]
+  },
+  {
+   "text": "the essay is at least 500 words long",
+   "score": 40,
+   "run_scores": [
+    44,
+    35,
+    41
+   ],
+   "specification": "the essay is at least 500 words long",
+   "readings": [
+    [
+     {
+      "attribute_label": "minimum word count",
+      "full_description": "the total word count is 500 words or more"
+     },
+     {
+      "attribute_label": "total word length",
+      "full_description": "the sum of all words in the text is at least 500"
+     },
+     {
+      "attribute_label": "word count threshold",
+      "full_description": "the word count reaches or exceeds a total of 500 words"
+     },
+     {
+      "attribute_label": "content length requirement",
+      "full_description": "the essay contains at least 500 words"
+     },
+     {
+      "attribute_label": "length assessment",
+      "full_description": "the total number of words in the essay is 500 or greater"
+     },
+     {
+      "attribute_label": "word count validation",
+      "full_description": "the document must have a word count of 500 or more"
+     },
+     {
+      "attribute_label": "minimum length criterion",
+      "full_description": "the length of the text must be at least 500 words"
+     },
+     {
+      "attribute_label": "500 word benchmark",
+      "full_description": "the essay must consist of no fewer than 500 words"
+     },
+     {
+      "attribute_label": "word count compliance",
+      "full_description": "the word count must equal or exceed 500 words"
+     },
+     {
+      "attribute_label": "required word amount",
+      "full_description": "the essay should have 500 words as a minimum length"
+     }
+    ],
+    [
+     {
+      "attribute_label": "word count above 500",
+      "full_description": "count the number of words in the text and verify if it is at least 500."
+     },
+     {
+      "attribute_label": "minimum word count requirement",
+      "full_description": "determine if the total word count in the text meets or exceeds 500 words."
+     },
+     {
+      "attribute_label": "total word count",
+      "full_description": "calculate the total number of words in the document and check if it reaches a minimum of 500."
+     },
+     {
+      "attribute_label": "word count threshold",
+      "full_description": "assess if the document contains 500 words or more."
+     },
+     {
+      "attribute_label": "length of text",
+      "full_description": "evaluate the text to see if it contains at least 500 words."
+     },
+     {
+      "attribute_label": "document length check",
+      "full_description": "analyze the document to confirm that the word count is equal to or greater than 500."
+     },
+     {
+      "attribute_label": "content length measure",
+      "full_description": "check the word count of the content to ensure it is at least 500 words."
+     },
+     {
+      "attribute_label": "text length validation",
+      "full_description": "validate the text by counting words and confirming it is 500 or more."
+     },
+     {
+      "attribute_label": "word count metric",
+      "full_description": "measure the number of words in the text and determine if it is a minimum of 500."
+     },
+     {
+      "attribute_label": "overall text length",
+      "full_description": "examine the text to check if the word count is at least 500 words long."
+     }
+    ],
+    [
+     {
+      "attribute_label": "word count above 500",
+      "full_description": "the total word count of the text is 500 words or more"
+     },
+     {
+      "attribute_label": "minimum word count",
+      "full_description": "the word count of the text meets or exceeds 500 words"
+     },
+     {
+      "attribute_label": "length criterion",
+      "full_description": "the document contains at least 500 words in total"
+     },
+     {
+      "attribute_label": "words exceeding 500",
+      "full_description": "the text has a word count that is greater than or equal to 500"
+     },
+     {
+      "attribute_label": "content length requirement",
+      "full_description": "the total number of words in the text is at least 500"
+     },
+     {
+      "attribute_label": "total word count check",
+      "full_description": "the word count of the document is checked to ensure it is 500 words or more"
+     },
+     {
+      "attribute_label": "minimum length condition",
+      "full_description": "the writing consists of no fewer than 500 words"
+     },
+     {
+      "attribute_label": "sufficient word count",
+      "full_description": "the text must contain a minimum of 500 words"
+     },
+     {
+      "attribute_label": "word count verification",
+      "full_description": "the number of words in the writing is verified to be at least 500"
+     },
+     {
+      "attribute_label": "length assessment",
+      "full_description": "the document is assessed to ensure it contains 500 or more words"
+     }
+    ]
+   ]
+  },
+  {
+   "text": "the argument is convincing",
+   "score": 74,
+   "run_scores": [
+    80,
+    66,
+    76
+   ],
+   "specification": "the argument is convincing",
+   "readings": [
+    [
+     {
+      "attribute_label": "clarity of argument",
+      "full_description": "the argument is presented clearly and logically, making it easy for the reader to understand."
+     },
+     {
+      "attribute_label": "use of evidence",
+      "full_description": "the argument includes relevant and credible evidence to support its claims."
+     },
+     {
+      "attribute_label": "counterargument acknowledgment",
+      "full_description": "the argument addresses and refutes potential counterarguments effectively."
+     },
+     {
+      "attribute_label": "persuasiveness of language",
+      "full_description": "the argument employs persuasive language and rhetorical strategies to convince the reader."
+     },
+     {
+      "attribute_label": "logical consistency",
+      "full_description": "the argument follows a consistent and logical flow of reasoning throughout."
+     },
+     {
+      "attribute_label": "relevance of claims",
+      "full_description": "all claims made in the argument are relevant to the main thesis and contribute to its persuasiveness."
+     },
+     {
+      "attribute_label": "emotional appeal",
+      "full_description": "the argument effectively uses emotional appeal to engage and persuade the audience."
+     },
+     {
+      "attribute_label": "threshold of conviction",
+      "full_description": "the argument evokes a strong sense of conviction in the reader, leading them to agree with the stance taken."
+     },
+     {
+      "attribute_label": "coherence of structure",
+      "full_description": "the argument is structured in a coherent manner, with clear connections between ideas and points."
+     },
+     {
+      "attribute_label": "audience engagement",
+      "full_description": "the argument actively engages the audience, drawing them into the discussion and stimulating their interest."
+     }
+    ],
+    [
+     {
+      "attribute_label": "strength of the argument",
+      "full_description": "the argument presented is based on at least three strong pieces of evidence."
+     },
+     {
+      "attribute_label": "clarity of the argument",
+      "full_description": "the argument is clearly articulated and easily understood by a reader."
+     },
+     {
+      "attribute_label": "rhetorical effectiveness",
+      "full_description": "the argument employs at least two rhetorical strategies effectively, such as ethos, pathos, or logos."
+     },
+     {
+      "attribute_label": "relevance of supporting evidence",
+      "full_description": "the supporting evidence is directly relevant to the main argument and strongly supports it."
+     },
+     {
+      "attribute_label": "logical consistency",
+      "full_description": "the argument maintains logical consistency, with no contradictions present in the claims made."
+     },
+     {
+      "attribute_label": "counterargument engagement",
+      "full_description": "the argument acknowledges and effectively engages with at least one significant counterargument."
+     },
+     {
+      "attribute_label": "depth of analysis",
+      "full_description": "the argument demonstrates depth of analysis by exploring multiple facets of the issue at hand."
+     },
+     {
+      "attribute_label": "persuasiveness of conclusions",
+      "full_description": "the conclusions drawn from the argument are persuasive and logically follow from the evidence presented."
+     },
+     {
+      "attribute_label": "audience consideration",
+      "full_description": "the argument is tailored to the intended audience, addressing their values and potential objections."
+     },
+     {
+      "attribute_label": "overall coherence",
+      "full_description": "the overall structure of the argument is coherent, with each part logically leading to the next."
+     }
+    ],
+    [
+     {
+      "attribute_label": "clarity of argument",
+      "full_description": "the argument presents ideas clearly and coherently, making it easy to understand."
+     },
+     {
+      "attribute_label": "logical consistency",
+      "full_description": "the argument is free of contradictions and follows logically from premise to conclusion."
+     },
+     {
+      "attribute_label": "persuasiveness of evidence",
+      "full_description": "the argument includes compelling evidence that effectively supports its claims."
+     },
+     {
+      "attribute_label": "engagement with counterarguments",
+      "full_description": "the argument acknowledges and effectively counters relevant opposing viewpoints."
+     },
+     {
+      "attribute_label": "emotional appeal",
+      "full_description": "the argument employs emotional appeals that resonate with the audience and enhance persuasiveness."
+     },
+     {
+      "attribute_label": "strength of claims",
+      "full_description": "the argument makes strong, assertive claims that are well-supported by reasoning and evidence."
+     },
+     {
+      "attribute_label": "relevance of examples",
+      "full_description": "the argument uses relevant and relatable examples to illustrate key points and bolster credibility."
+     },
+     {
+      "attribute_label": "audience awareness",
+      "full_description": "the argument demonstrates an understanding of the target audience's values, beliefs, and needs."
+     },
+     {
+      "attribute_label": "overall cohesiveness",
+      "full_description": "the argument maintains a single, focused theme throughout, contributing to overall unity."
+     },
+     {
+      "attribute_label": "rhetorical effectiveness",
+      "full_description": "the argument employs rhetorical strategies effectively to enhance its convincing nature."
+     }
+    ]
+   ]
+  },
+  {
+   "text": "the essay is original",
+   "score": 74,
+   "run_scores": [
+    74,
+    75,
+    73
+   ],
+   "specification": "the essay is original",
+   "readings": [
+    [
+     {
+      "attribute_label": "uniqueness of ideas",
+      "full_description": "the content presents ideas that are not commonly expressed by others and demonstrate distinct thought."
+     },
+     {
+      "attribute_label": "originality of arguments",
+      "full_description": "the arguments made in the content are novel and provide a fresh perspective on the topic."
+     },
+     {
+      "attribute_label": "creativity in expression",
+      "full_description": "the writing style showcases a creative approach, avoiding clich\u00e9s and standard phrases."
+     },
+     {
+      "attribute_label": "use of personal experiences",
+      "full_description": "the content incorporates personal anecdotes or experiences that are unique to the author."
+     },
+     {
+      "attribute_label": "innovative concepts",
+      "full_description": "the essay introduces new concepts or interpretations that have not been widely discussed."
+     },
+     {
+      "attribute_label": "distinctive voice",
+      "full_description": "the writing reflects a unique voice that sets the author apart from typical expressions in the subject area."
+     },
+     {
+      "attribute_label": "original research or references",
+      "full_description": "the content includes references or research that are not commonly cited by others in the field."
+     },
+     {
+      "attribute_label": "lack of plagiarism",
+      "full_description": "the text does not include any directly copied content from other sources without proper attribution."
+     },
+     {
+      "attribute_label": "new insights",
+      "full_description": "the essay provides insights or conclusions that are not presented in existing literature on the topic."
+     },
+     {
+      "attribute_label": "inventiveness in structure",
+      "full_description": "the organization of the content is original and does not follow conventional formats commonly used."
+     }
+    ],
+    [
+     {
+      "attribute_label": "uniqueness of ideas",
+      "full_description": "the essay presents ideas that are not commonly found in other sources or discussions."
+     },
+     {
+      "attribute_label": "originality of arguments",
+      "full_description": "the essay offers arguments that have not been previously articulated in existing literature or discourse."
+     },
+     {
+      "attribute_label": "novelty of examples",
+      "full_description": "the essay incorporates examples that are unique and not typically used to support similar arguments."
+     },
+     {
+      "attribute_label": "distinctive voice",
+      "full_description": "the essay reflects a personal writing style that sets it apart from standard academic or professional writing."
+     },
+     {
+      "attribute_label": "creativity in expression",
+      "full_description": "the essay employs innovative language or metaphors that contribute to a fresh perspective on the topic."
+     },
+     {
+      "attribute_label": "absence of plagiarism",
+      "full_description": "the essay does not contain passages that are taken from other works without proper citation."
+     },
+     {
+      "attribute_label": "exploration of new topics",
+      "full_description": "the essay tackles subjects that have not been extensively covered in prior academic work."
+     },
+     {
+      "attribute_label": "fresh insights",
+      "full_description": "the essay provides new interpretations or conclusions that add to the existing body of knowledge."
+     },
+     {
+      "attribute_label": "individual perspective",
+      "full_description": "the essay reflects the author's unique viewpoint rather than echoing established opinions or mainstream thoughts."
+     },
+     {
+      "attribute_label": "original research findings",
+      "full_description": "the essay presents data or results from research that have not been published elsewhere."
+     }
+    ],
+    [
+     {
+      "attribute_label": "unique ideas presented",
+      "full_description": "the essay presents at least three unique ideas that are not commonly discussed in existing literature."
+     },
+     {
+      "attribute_label": "original argument development",
+      "full_description": "the essay develops an argument that showcases original reasoning or perspective distinct from existing arguments."
+     },
+     {
+      "attribute_label": "creative expression",
+      "full_description": "the essay employs creative language and novel metaphors that enhance the originality of the content."
+     },
+     {
+      "attribute_label": "distinctive voice",
+      "full_description": "the essay exhibits a distinctive voice that differentiates it from typical writing styles in the genre."
+     },
+     {
+      "attribute_label": "novel research or insights",
+      "full_description": "the essay incorporates novel research findings or insights that have not been widely recognized or discussed."
+     },
+     {
+      "attribute_label": "originality in structure",
+      "full_description": "the essay utilizes an unconventional structure that reflects original thought, such as non-linear progression or innovative formatting."
+     },
+     {
+      "attribute_label": "uncommon perspectives",
+      "full_description": "the essay presents viewpoints that are not commonly represented in the mainstream discourse on the topic."
+     },
+     {
+      "attribute_label": "absence of plagiarism",
+      "full_description": "the essay contains no plagiarized content as determined by a plagiarism detection tool."
+     },
+     {
+      "attribute_label": "fresh examples used",
+      "full_description": "the essay includes examples that are current and not frequently referenced in similar discussions."
+     },
+     {
+      "attribute_label": "original conclusions drawn",
+      "full_description": "the essay reaches conclusions that are original and not simply reiterations of existing arguments or findings."
+     }
+    ]
+   ]
+  },
+  {
+   "text": "the essay is interesting",
+   "score": 74,
+   "run_scores": [
+    68,
+    80,
+    75
+   ],
+   "specification": "the essay is interesting",
+   "readings": [
+    [
+     {
+      "attribute_label": "reader engagement level",
+      "full_description": "assess the frequency of reader comments indicating interest throughout the essay."
+     },
+     {
+      "attribute_label": "unique ideas presented",
+      "full_description": "count the number of distinct and innovative ideas introduced in the essay."
+     },
+     {
+      "attribute_label": "compelling narrative elements",
+      "full_description": "identify and score the presence of engaging story elements that capture reader attention."
+     },
+     {
+      "attribute_label": "use of vivid descriptions",
+      "full_description": "measure the number of descriptive phrases that evoke strong imagery and interest."
+     },
+     {
+      "attribute_label": "variety of topics covered",
+      "full_description": "evaluate the range of topics discussed in the essay, scoring based on diversity and interest."
+     },
+     {
+      "attribute_label": "emotional appeal",
+      "full_description": "analyze the presence of emotional language that aims to engage the reader on a personal level."
+     },
+     {
+      "attribute_label": "intriguing questions posed",
+      "full_description": "count the number of thought-provoking questions raised in the essay that invite reader reflection."
+     },
+     {
+      "attribute_label": "clarity of writing style",
+      "full_description": "assess the clarity and fluidity of writing, scoring how well it maintains reader interest."
+     },
+     {
+      "attribute_label": "surprising facts included",
+      "full_description": "identify and tally instances of surprising or unexpected information that captivates the reader."
+     },
+     {
+      "attribute_label": "overall narrative structure",
+      "full_description": "evaluate the effectiveness of the essay's structure in creating a compelling and interesting flow."
+     }
+    ],
+    [
+     {
+      "attribute_label": "reader engagement level",
+      "full_description": "assess the degree to which readers express interest or engagement with the content of the essay through comments or discussions."
+     },
+     {
+      "attribute_label": "narrative appeal",
+      "full_description": "evaluate the presence of compelling narratives or storytelling elements that capture and maintain reader interest."
+     },
+     {
+      "attribute_label": "use of vivid descriptions",
+      "full_description": "measure the frequency and impact of vivid and descriptive language that creates mental imagery and draws in the reader."
+     },
+     {
+      "attribute_label": "originality of ideas",
+      "full_description": "determine the uniqueness and freshness of the arguments or perspectives presented, as perceived by the reader."
+     },
+     {
+      "attribute_label": "clarity of expression",
+      "full_description": "assess how clearly and effectively ideas are communicated, which can affect overall reader interest."
+     },
+     {
+      "attribute_label": "use of rhetorical questions",
+      "full_description": "count the number of rhetorical questions posed throughout the text, which can engage readers by prompting them to think critically."
+     },
+     {
+      "attribute_label": "emotional resonance",
+      "full_description": "evaluate the extent to which the content evokes emotional responses from readers, indicating an interesting and impactful narrative."
+     },
+     {
+      "attribute_label": "complexity of themes",
+      "full_description": "assess the depth and complexity of the themes explored, which can contribute to sustained reader interest."
+     },
+     {
+      "attribute_label": "humor and wit",
+      "full_description": "measure the presence and effectiveness of humor or wit in the writing, which can enhance reader enjoyment and engagement."
+     },
+     {
+      "attribute_label": "persuasiveness of arguments",
+      "full_description": "evaluate how convincingly the arguments are presented, as this can influence reader interest and engagement with the content."
+     }
+    ],
+    [
+     {
+      "attribute_label": "reader engagement level",
+      "full_description": "measure the degree to which readers express engagement through comments, ratings, or feedback on the content."
+     },
+     {
+      "attribute_label": "use of compelling anecdotes",
+      "full_description": "identify the presence of at least two compelling anecdotes or personal stories that capture reader interest."
+     },
+     {
+      "attribute_label": "variety of sentence structures",
+      "full_description": "assess the diversity of sentence structures used, with a requirement of at least three different forms to enhance interest."
+     },
+     {
+      "attribute_label": "presence of provocative questions",
+      "full_description": "count the number of thought-provoking questions posed in the content, with at least three such instances."
+     },
+     {
+      "attribute_label": "emotional resonance",
+      "full_description": "evaluate the level of emotional resonance by identifying instances of strong emotional language or imagery that evoke feelings in readers."
+     },
+     {
+      "attribute_label": "unique perspectives presented",
+      "full_description": "identify whether the content offers at least one unique perspective on a common topic, contributing to its overall interest."
+     },
+     {
+      "attribute_label": "use of vivid descriptions",
+      "full_description": "measure the frequency of vivid descriptions that create strong visual imagery in the reader's mind."
+     },
+     {
+      "attribute_label": "engagement through humor",
+      "full_description": "assess the use of humor as a technique to engage readers, with at least two instances of humor present."
+     },
+     {
+      "attribute_label": "clarity of main ideas",
+      "full_description": "evaluate the clarity with which the main ideas are presented, requiring clear articulation without ambiguity."
+     },
+     {
+      "attribute_label": "depth of analysis",
+      "full_description": "measure the level of analysis by assessing whether the content goes beyond surface-level insights to provide deeper understanding."
+     }
+    ]
+   ]
+  }
+ ],
+ "dialogues": {
+  "converging": [
+   {
+    "turn": 1,
+    "score": 75,
+    "run_scores": [
+     75,
+     70,
+     80
+    ],
+    "specification": "I care about originality",
+    "readings": [
+     [
+      {
+       "attribute_label": "unique ideas presented",
+       "full_description": "count the number of distinct ideas presented in the content that are not commonly found in existing literature or discourse."
+      },
+      {
+       "attribute_label": "original phrasing usage",
+       "full_description": "evaluate the proportion of phrases that are uniquely constructed compared to standard or clich\u00e9d expressions."
+      },
+      {
+       "attribute_label": "creative argument formulation",
+       "full_description": "assess the originality of arguments made by determining how many present novel perspectives or insights on the topic."
+      },
+      {
+       "attribute_label": "uncommon references cited",
+       "full_description": "identify and count the number of references used that are not widely cited in the field or mainstream discussions."
+      },
+      {
+       "attribute_label": "innovative concepts explored",
+       "full_description": "measure the extent to which new or unconventional concepts are introduced and discussed in the content."
+      },
+      {
+       "attribute_label": "distinctive writing style",
+       "full_description": "analyze the writing style for elements that differ from typical formats or approaches in similar texts."
+      },
+      {
+       "attribute_label": "percentage of original content",
+       "full_description": "calculate the percentage of content that is original as opposed to paraphrased or replicated from other sources."
+      },
+      {
+       "attribute_label": "novel examples provided",
+       "full_description": "count the number of examples or illustrations used that are unique or rarely employed in similar essays."
+      },
+      {
+       "attribute_label": "originality score based on peer review",
+       "full_description": "assign a score based on feedback from peers regarding the perceived originality of the content."
+      },
+      {
+       "attribute_label": "presence of original insights",
+       "full_description": "determine whether the content offers personal insights or interpretations that are not found in well-known analyses."
+      }
+     ],
+     [
+      {
+       "attribute_label": "unique ideas presented",
+       "full_description": "assess whether the essay presents ideas that are not commonly found in existing literature or discourse."
+      },
+      {
+       "attribute_label": "originality of perspective",
+       "full_description": "evaluate if the essay offers a viewpoint that differs significantly from mainstream or widely accepted perspectives."
+      },
+      {
+       "attribute_label": "innovative use of examples",
+       "full_description": "check if the essay employs examples or illustrations that are novel or uncommon in the context of the topic discussed."
+      },
+      {
+       "attribute_label": "novel arguments made",
+       "full_description": "determine if the essay introduces arguments or reasoning that have not been previously established or widely argued."
+      },
+      {
+       "attribute_label": "creative language usage",
+       "full_description": "analyze the essay for the presence of unique or inventive language that sets it apart from typical discourse."
+      },
+      {
+       "attribute_label": "diverse sources cited",
+       "full_description": "examine the range of sources utilized in the essay to see if they are distinct and not commonly referenced in the field."
+      },
+      {
+       "attribute_label": "individual style and voice",
+       "full_description": "assess the essay's writing style to determine if it reflects a personal and distinctive authorial voice."
+      },
+      {
+       "attribute_label": "uncommon themes explored",
+       "full_description": "identify whether the essay discusses themes or topics that are not frequently addressed in similar works."
+      },
+      {
+       "attribute_label": "original conclusions drawn",
+       "full_description": "evaluate if the conclusions of the essay are derived from the author's unique insights rather than usual interpretations."
+      },
+      {
+       "attribute_label": "fresh interpretations offered",
+       "full_description": "check for the presence of new or refreshing interpretations of familiar topics or texts within the essay."
+      }
+     ],
+     [
+      {
+       "attribute_label": "uniqueness of ideas",
+       "full_description": "assess whether the ideas presented are distinct from common knowledge or previously established concepts."
+      },
+      {
+       "attribute_label": "creative expression",
+       "full_description": "evaluate the extent to which the writing employs novel metaphors, analogies, or creative language that diverges from typical expressions."
+      },
+      {
+       "attribute_label": "original argument development",
+       "full_description": "check if the arguments made are developed in a way that reflects personal insights rather than widely accepted arguments."
+      },
+      {
+       "attribute_label": "use of uncommon references",
+       "full_description": "identify whether the essay includes references to lesser-known works, theories, or concepts that enrich the originality."
+      },
+      {
+       "attribute_label": "divergence from typical structures",
+       "full_description": "analyze if the essay follows a non-traditional structure that sets it apart from standard essay formats."
+      },
+      {
+       "attribute_label": "novel thematic exploration",
+       "full_description": "determine if the themes explored are approached in a way that offers a fresh perspective compared to typical discussions."
+      },
+      {
+       "attribute_label": "individual voice and style",
+       "full_description": "evaluate the presence of a distinct personal voice or style that differentiates the author from others."
+      },
+      {
+       "attribute_label": "invention of new concepts",
+       "full_description": "assess if the writing introduces entirely new ideas or frameworks that have not been discussed before."
+      },
+      {
+       "attribute_label": "variation in perspectives",
+       "full_description": "check if the essay presents perspectives that are unusual or unconventional relative to mainstream views."
+      },
+      {
+       "attribute_label": "authenticity of content",
+       "full_description": "determine if the content reflects genuine personal experiences or insights that are not commonly shared."
+      }
+     ]
+    ]
+   },
+   {
+    "turn": 2,
+    "score": 68,
+    "run_scores": [
+     64,
+     70,
+     71
+    ],
+    "specification": "I care about originality, specifically ideas I haven't seen in other essays, not style.",
+    "readings": [
+     [
+      {
+       "attribute_label": "unique ideas presented",
+       "full_description": "count the number of unique ideas presented that are not commonly found in other similar essays."
+      },
+      {
+       "attribute_label": "originality of concepts",
+       "full_description": "assess the originality of concepts introduced in the piece compared to a predefined list of common ideas found in the genre."
+      },
+      {
+       "attribute_label": "absence of clich\u00e9d arguments",
+       "full_description": "evaluate the essay for the absence of clich\u00e9d arguments or widely accepted ideas within the subject area."
+      },
+      {
+       "attribute_label": "novel thesis statements",
+       "full_description": "identify whether the thesis statement presents a novel perspective that has not been widely addressed in existing essays."
+      },
+      {
+       "attribute_label": "diversity of viewpoints",
+       "full_description": "analyze the diversity of viewpoints expressed, ensuring that they are not repetitive of typical arguments found in similar essays."
+      },
+      {
+       "attribute_label": "innovative solutions proposed",
+       "full_description": "determine the presence of innovative solutions to problems presented in the essay that differ from standard responses."
+      },
+      {
+       "attribute_label": "creative examples used",
+       "full_description": "evaluate the creativity and originality of examples used to support arguments, ensuring they are not clich\u00e9s or commonly cited."
+      },
+      {
+       "attribute_label": "engagement with underrepresented ideas",
+       "full_description": "measure engagement with underrepresented or less discussed ideas in the topic area, indicating a focus on originality."
+      },
+      {
+       "attribute_label": "original arguments structure",
+       "full_description": "assess whether the structure of arguments follows an original logic that is distinct from traditional frameworks used in the field."
+      },
+      {
+       "attribute_label": "fresh perspectives on common topics",
+       "full_description": "determine if the essay provides fresh perspectives on topics typically covered, thus showcasing originality."
+      }
+     ],
+     [
+      {
+       "attribute_label": "unique idea count",
+       "full_description": "Count the number of distinct ideas presented that have not been encountered in other essays on the same topic."
+      },
+      {
+       "attribute_label": "novelty of concepts",
+       "full_description": "Assess the originality of concepts introduced, ensuring they are not widely recognized or discussed in existing essays."
+      },
+      {
+       "attribute_label": "distinct argument analysis",
+       "full_description": "Analyze the arguments made in the essay, identifying those that are unique and have not been previously articulated in other essays."
+      },
+      {
+       "attribute_label": "originality in themes",
+       "full_description": "Evaluate the themes covered in the essay, specifically looking for those that are uncommon and not reflected in other works."
+      },
+      {
+       "attribute_label": "atypical perspectives",
+       "full_description": "Identify and count the number of perspectives offered in the essay that are rare or not typically presented in similar essays."
+      },
+      {
+       "attribute_label": "creative idea synthesis",
+       "full_description": "Measure the extent to which the essay synthesizes ideas in novel ways that distinguish it from existing essays on the topic."
+      },
+      {
+       "attribute_label": "uncommon examples used",
+       "full_description": "Examine the examples provided in the essay, noting those that are unique and have not appeared in other discussions of the same topic."
+      },
+      {
+       "attribute_label": "innovative solutions proposed",
+       "full_description": "Evaluate the originality of solutions or proposals made in the essay, ensuring they are not standard or have been previously suggested."
+      },
+      {
+       "attribute_label": "nonconformist ideas",
+       "full_description": "Assess the degree to which the ideas presented depart from conventional thinking found in similar essays."
+      },
+      {
+       "attribute_label": "original insights",
+       "full_description": "Identify insights in the essay that offer new understanding and have not been articulated in prior essays on the topic."
+      }
+     ],
+     [
+      {
+       "attribute_label": "original idea presence",
+       "full_description": "Identify ideas that are entirely novel and have not been presented in any other known essays on the same topic."
+      },
+      {
+       "attribute_label": "unique argument formulation",
+       "full_description": "Check for the formulation of arguments that are distinct from common arguments found in existing essays."
+      },
+      {
+       "attribute_label": "novel concept introduction",
+       "full_description": "Evaluate if the essay introduces concepts or themes that have not been explored in previous essays."
+      },
+      {
+       "attribute_label": "distinctive perspective offering",
+       "full_description": "Assess whether a perspective is offered that has not been shared in similar essays on the subject."
+      },
+      {
+       "attribute_label": "originality of insights",
+       "full_description": "Determine the presence of insights that are not replicated from other essays on related topics."
+      },
+      {
+       "attribute_label": "new examples usage",
+       "full_description": "Review for the use of examples that have not been cited or utilized in other essays discussing the same themes."
+      },
+      {
+       "attribute_label": "creative idea synthesis",
+       "full_description": "Analyze the synthesis of ideas from different fields or areas that creates a unique viewpoint not found in existing essays."
+      },
+      {
+       "attribute_label": "innovative solution proposal",
+       "full_description": "Look for the proposal of solutions to problems that differ from those found in other essays on similar issues."
+      },
+      {
+       "attribute_label": "rare thematic exploration",
+       "full_description": "Check if the essay explores themes that are rarely addressed in other essays."
+      },
+      {
+       "attribute_label": "original narrative elements",
+       "full_description": "Identify the presence of narrative elements or storytelling techniques that have not been utilized in existing essays."
+      }
+     ]
+    ]
+   },
+   {
+    "turn": 3,
+    "score": 71,
+    "run_scores": [
+     70,
+     71,
+     73
+    ],
+    "specification": "Originality, specifically a thesis that no other essay in the corpus makes.",
+    "readings": [
+     [
+      {
+       "attribute_label": "unique thesis statement",
+       "full_description": "identifies a thesis statement that is not repeated in any other essays in the corpus."
+      },
+      {
+       "attribute_label": "original argument analysis",
+       "full_description": "provides an analysis that presents an argument not found in any other essays in the corpus."
+      },
+      {
+       "attribute_label": "distinctive perspective",
+       "full_description": "offers a perspective on the topic that has not been presented by any other essays in the corpus."
+      },
+      {
+       "attribute_label": "novel interpretations",
+       "full_description": "includes interpretations of the key themes that are not echoed in any other essays in the corpus."
+      },
+      {
+       "attribute_label": "innovative ideas",
+       "full_description": "presents ideas that are entirely new and not found in other essays within the corpus."
+      },
+      {
+       "attribute_label": "non-conventional approaches",
+       "full_description": "utilizes approaches to the topic that differ from those in all other essays present in the corpus."
+      },
+      {
+       "attribute_label": "exclusive thematic insights",
+       "full_description": "offers insights on themes that are unique and have not been addressed in any other essays in the corpus."
+      },
+      {
+       "attribute_label": "one-of-a-kind viewpoints",
+       "full_description": "expresses viewpoints on the subject matter that are not shared by other essays in the corpus."
+      },
+      {
+       "attribute_label": "distinct thesis originality",
+       "full_description": "demonstrates a thesis that stands out for its originality compared to all other essays in the corpus."
+      },
+      {
+       "attribute_label": "unparalleled assertions",
+       "full_description": "makes assertions about the topic that are not found in any of the other essays in the corpus."
+      }
+     ],
+     [
+      {
+       "attribute_label": "unique thesis statement",
+       "full_description": "thesis statement that has not been presented in any other work in the corpus."
+      },
+      {
+       "attribute_label": "original argument structure",
+       "full_description": "an argument structure that is not replicated in any other work in the corpus."
+      },
+      {
+       "attribute_label": "novel perspective introduction",
+       "full_description": "introduction of a perspective on the topic that is distinct from those found in other works in the corpus."
+      },
+      {
+       "attribute_label": "distinct conclusion findings",
+       "full_description": "findings in the conclusion that do not appear in the conclusions of any other works in the corpus."
+      },
+      {
+       "attribute_label": "innovative topic exploration",
+       "full_description": "exploration of the essay topic in a way that is not mirrored in any other piece in the corpus."
+      },
+      {
+       "attribute_label": "original supporting evidence",
+       "full_description": "use of supporting evidence that is not utilized in any other essay in the corpus."
+      },
+      {
+       "attribute_label": "unique thematic approach",
+       "full_description": "thematic approach that is different from the themes addressed in other works in the corpus."
+      },
+      {
+       "attribute_label": "exclusive conceptual framework",
+       "full_description": "conceptual framework or model that is not applied in any other essay contained within the corpus."
+      },
+      {
+       "attribute_label": "idiosyncratic writing style",
+       "full_description": "writing style that shows a uniqueness not found in the writing styles of any other works in the corpus."
+      },
+      {
+       "attribute_label": "uncommon argumentation techniques",
+       "full_description": "application of argumentation techniques that are not used in any other works in the corpus."
+      }
+     ],
+     [
+      {
+       "attribute_label": "unique thesis statement",
+       "full_description": "Identify a thesis that is not present in any other work in the corpus."
+      },
+      {
+       "attribute_label": "original argument development",
+       "full_description": "Assess whether the argument presented is not elaborated in any other work in the corpus."
+      },
+      {
+       "attribute_label": "novel perspective",
+       "full_description": "Determine if the viewpoint expressed in the thesis is distinct from those in all other works in the corpus."
+      },
+      {
+       "attribute_label": "unexplored themes",
+       "full_description": "Evaluate the presence of themes that do not appear in any other work in the corpus."
+      },
+      {
+       "attribute_label": "distinct methodological approach",
+       "full_description": "Analyze if the methodology used for argumentation is unique compared to all other works in the corpus."
+      },
+      {
+       "attribute_label": "non-redundant evidence",
+       "full_description": "Check if the supporting evidence used for the thesis is not referenced in any other work in the corpus."
+      },
+      {
+       "attribute_label": "innovative conclusions",
+       "full_description": "Identify if the conclusions drawn are not mirrored in other works available in the corpus."
+      },
+      {
+       "attribute_label": "original conceptual framework",
+       "full_description": "Examine if the conceptual framework employed to support the thesis is different from all others in the corpus."
+      },
+      {
+       "attribute_label": "creative synthesis of ideas",
+       "full_description": "Assess whether the synthesis of ideas within the thesis is not replicated in any other work in the corpus."
+      },
+      {
+       "attribute_label": "exclusive topic focus",
+       "full_description": "Determine if the topic focus of the thesis has not been addressed in any other work within the corpus."
+      }
+     ]
+    ]
+   }
+  ],
+  "reversal": [
+   {
+    "turn": 1,
+    "score": 35,
+    "run_scores": [
+     29,
+     34,
+     41
+    ],
+    "specification": "The essay must contain at least three citations",
+    "readings": [
+     [
+      {
+       "attribute_label": "citation count",
+       "full_description": "count the total number of citations in the essay and verify that it is at least three."
+      },
+      {
+       "attribute_label": "minimum citation requirement",
+       "full_description": "check if the essay includes a minimum of three citations from external sources."
+      },
+      {
+       "attribute_label": "citation presence",
+       "full_description": "identify whether there are at least three distinct citations referenced in the essay."
+      },
+      {
+       "attribute_label": "citations per paragraph",
+       "full_description": "calculate the number of citations in the essay and ensure there are at least three, regardless of their distribution across paragraphs."
+      },
+      {
+       "attribute_label": "distinct source citations",
+       "full_description": "confirm that the essay cites at least three different sources or references."
+      },
+      {
+       "attribute_label": "citation frequency",
+       "full_description": "evaluate the essay to ensure it contains at least three citations within the text."
+      },
+      {
+       "attribute_label": "citations in text",
+       "full_description": "examine the text for the inclusion of a minimum of three citations."
+      },
+      {
+       "attribute_label": "citations count verification",
+       "full_description": "assess the essay to verify that it has at least three citations cited throughout."
+      },
+      {
+       "attribute_label": "total citation assessment",
+       "full_description": "analyze the number of citations present to confirm there are three or more."
+      },
+      {
+       "attribute_label": "citations required",
+       "full_description": "check if the essay includes at least three citations from any sources."
+      }
+     ],
+     [
+      {
+       "attribute_label": "citation count",
+       "full_description": "count the total number of citations present in the essay and ensure it is at least three."
+      },
+      {
+       "attribute_label": "minimum citation requirement",
+       "full_description": "check that the essay includes a minimum of three distinct citations."
+      },
+      {
+       "attribute_label": "citation presence",
+       "full_description": "verify that there are at least three citations referenced within the essay."
+      },
+      {
+       "attribute_label": "three or more citations",
+       "full_description": "assess that the essay contains three or more citations to external sources."
+      },
+      {
+       "attribute_label": "citation diversity",
+       "full_description": "ensure that the essay cites at least three different sources throughout the text."
+      },
+      {
+       "attribute_label": "citation validity",
+       "full_description": "confirm that the essay has at least three citations that are valid and relevant to the content."
+      },
+      {
+       "attribute_label": "citations per page",
+       "full_description": "calculate the total number of citations in relation to the number of pages and ensure there are at least three citations in total."
+      },
+      {
+       "attribute_label": "citation integration",
+       "full_description": "check for at least three integrated citations within the essay that support the main arguments."
+      },
+      {
+       "attribute_label": "citation types",
+       "full_description": "examine the essay for at least three citations of varying types (books, articles, websites, etc.)."
+      },
+      {
+       "attribute_label": "citations located in body",
+       "full_description": "ensure that at least three citations are explicitly located in the body of the essay."
+      }
+     ],
+     [
+      {
+       "attribute_label": "citation count",
+       "full_description": "the total number of citations included in the text must be at least three"
+      },
+      {
+       "attribute_label": "minimum citation requirement",
+       "full_description": "the text must include at least three distinct citations from credible sources"
+      },
+      {
+       "attribute_label": "citations per paragraph",
+       "full_description": "the essay must contain at least three citations, with at least one citation in every two paragraphs"
+      },
+      {
+       "attribute_label": "source diversity",
+       "full_description": "the essay must include at least three citations from different sources"
+      },
+      {
+       "attribute_label": "citation placement",
+       "full_description": "the text must include at least three citations placed appropriately within the body of the work"
+      },
+      {
+       "attribute_label": "cited works threshold",
+       "full_description": "there must be a minimum of three cited works referenced in the writing"
+      },
+      {
+       "attribute_label": "citation relevance",
+       "full_description": "the essay must contain at least three relevant citations that support the main arguments"
+      },
+      {
+       "attribute_label": "citation type variety",
+       "full_description": "the work must include at least three citations of different types, such as books, articles, or websites"
+      },
+      {
+       "attribute_label": "citations in conclusions",
+       "full_description": "the essay must include at least three citations, with at least one citation in the conclusion section"
+      },
+      {
+       "attribute_label": "citation verification",
+       "full_description": "the text must include at least three citations that can be verified through external sources"
+      }
+     ]
+    ]
+   },
+   {
+    "turn": 2,
+    "score": 78,
+    "run_scores": [
+     75,
+     79,
+     80
+    ],
+    "specification": "The essay must feel well-supported.",
+    "readings": [
+     [
+      {
+       "attribute_label": "quality of supporting evidence",
+       "full_description": "the essay presents at least three distinct pieces of evidence that effectively support the main argument."
+      },
+      {
+       "attribute_label": "clarity of argumentation",
+       "full_description": "the essay articulates a clear argument that is consistently supported by relevant examples or data throughout."
+      },
+      {
+       "attribute_label": "use of counterarguments",
+       "full_description": "the essay acknowledges and effectively addresses at least one counterargument, thereby strengthening its overall position."
+      },
+      {
+       "attribute_label": "depth of analysis",
+       "full_description": "the essay offers a detailed analysis of key points, demonstrating thorough understanding and engagement with the topic."
+      },
+      {
+       "attribute_label": "variety of sources",
+       "full_description": "the essay incorporates at least four diverse sources of information, enhancing the credibility of the arguments made."
+      },
+      {
+       "attribute_label": "logical structure",
+       "full_description": "the essay has a coherent structure with logically connected points that build towards a well-supported conclusion."
+      },
+      {
+       "attribute_label": "relevance of examples",
+       "full_description": "the essay includes examples that are directly relevant to the thesis and illustrate the key points effectively."
+      },
+      {
+       "attribute_label": "integration of quotes",
+       "full_description": "the essay effectively integrates direct quotes from sources, providing appropriate context and analysis to support the argument."
+      },
+      {
+       "attribute_label": "consistency in tone",
+       "full_description": "the essay maintains a consistent and appropriate tone throughout, which reinforces the overall argument and supports its persuasiveness."
+      },
+      {
+       "attribute_label": "thoroughness of conclusion",
+       "full_description": "the conclusion summarizes the main points and reinforces the overall argument made in the essay, leaving the reader with a strong sense of closure."
+      }
+     ],
+     [
+      {
+       "attribute_label": "use of supporting evidence",
+       "full_description": "The essay includes at least three distinct pieces of evidence to support its main arguments."
+      },
+      {
+       "attribute_label": "logical reasoning clarity",
+       "full_description": "The essay demonstrates a clear and logical progression of ideas, making it easy to follow the argument."
+      },
+      {
+       "attribute_label": "counterargument consideration",
+       "full_description": "The essay addresses at least one counterargument and effectively refutes it with supporting evidence."
+      },
+      {
+       "attribute_label": "depth of analysis",
+       "full_description": "The essay provides in-depth analysis for each supporting point, going beyond surface-level explanations."
+      },
+      {
+       "attribute_label": "source reliability",
+       "full_description": "The evidence presented in the essay is sourced from credible and reliable references."
+      },
+      {
+       "attribute_label": "integration of quotes",
+       "full_description": "The essay effectively integrates at least two quotations from credible sources that enhance the argument."
+      },
+      {
+       "attribute_label": "consistency of argument",
+       "full_description": "The essay maintains a consistent argument throughout, with all points contributing to the overall thesis."
+      },
+      {
+       "attribute_label": "relevance of examples",
+       "full_description": "The essay includes relevant examples that directly support the main points being made."
+      },
+      {
+       "attribute_label": "thesis statement clarity",
+       "full_description": "The essay presents a clear thesis statement that outlines the primary argument being supported."
+      },
+      {
+       "attribute_label": "overall cohesiveness",
+       "full_description": "The essay is cohesively structured, with clear transitions between points that support the central argument."
+      }
+     ],
+     [
+      {
+       "attribute_label": "use of credible evidence",
+       "full_description": "the essay employs at least three credible sources to support key arguments."
+      },
+      {
+       "attribute_label": "logical argument progression",
+       "full_description": "the essay demonstrates a clear and logical flow of arguments that connect to support the main thesis."
+      },
+      {
+       "attribute_label": "counterargument engagement",
+       "full_description": "the essay acknowledges and addresses at least one counterargument to strengthen its position."
+      },
+      {
+       "attribute_label": "relevant examples provided",
+       "full_description": "the essay includes at least two relevant examples that illustrate the main points effectively."
+      },
+      {
+       "attribute_label": "data and statistics integration",
+       "full_description": "the essay incorporates relevant data or statistics that substantiate the arguments made."
+      },
+      {
+       "attribute_label": "authoritative voice",
+       "full_description": "the essay is written in a confident, authoritative tone that enhances the perceived reliability of the arguments."
+      },
+      {
+       "attribute_label": "thematic consistency",
+       "full_description": "the essay maintains thematic consistency throughout, ensuring all points relate back to the central argument."
+      },
+      {
+       "attribute_label": "clarity of thesis statement",
+       "full_description": "the thesis statement is clear, concise, and explicitly outlines the main argument of the essay."
+      },
+      {
+       "attribute_label": "transitional phrases use",
+       "full_description": "the essay employs transitional phrases effectively to guide the reader through the argument."
+      },
+      {
+       "attribute_label": "depth of analysis",
+       "full_description": "the essay provides a deep analysis of the topic, showing thorough understanding and insight into the subject matter."
+      }
+     ]
+    ]
+   }
+  ]
+ }
+}

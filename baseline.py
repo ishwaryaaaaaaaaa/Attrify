@@ -8,7 +8,9 @@ if the baseline blocked, so treat this as my choice and state it in the write-up
 """
 import config
 import function_agent
+import pipeline_trace as PT
 import prompts
+import question_agent as Q
 from session import ReviewPending, Session
 
 
@@ -28,8 +30,10 @@ class BaselineSession(Session):
         return "\n".join(f"Q: {t.question}\nA: {t.answer}" for t in self.history.turns if t.answer)
 
     def _chat_reply(self):
-        out = self.llm(prompts.BASELINE_SYSTEM, prompts.baseline_user(self._transcript()),
-                       config.BASELINE_MODEL, config.BASELINE_TEMP)
+        with PT.scope("Baseline Chat", "Reply", "Plain chat reply from the transcript. No softness score, no question types."):
+            out = self.llm(prompts.BASELINE_SYSTEM, prompts.baseline_user(self._transcript()),
+                           config.BASELINE_MODEL, config.BASELINE_TEMP)
+            PT.attach(outputs={"reply": out.strip().strip('"')})
         return out.strip().strip('"')
 
     def submit_answer(self, answer):
@@ -38,10 +42,16 @@ class BaselineSession(Session):
         if self.pending():
             raise ReviewPending("Review every proposed card before answering the next question.")
         self.history.answer_last(answer)
+        self.history.turns[-1].keywords = Q.keywords(answer)
         self.awaiting_answer = False
+        self.cancelled.clear()
         self.log.log("answer", text=answer)
+        PT.add("You", "Answer received", "io", note="The baseline calls the Function Agent after every message (no softness gate).",
+               outputs={"answer": answer, "keywords": self.history.turns[-1].keywords})
 
-        new, failures = function_agent.generate_functions(self._all_qa(), self.registry, self.llm)
+        new, failures = function_agent.generate_functions(
+            self._all_qa(), self.registry, self.llm,
+            on_stage=lambda t: self._hook("stage", t), on_card=lambda f: self._hook("card", f))
         self.log.log("functions", ids=[f.id for f in new], names=[f.name for f in new], failures=failures)
         self._reply = self._chat_reply()     # generated now, shown once cards are reviewed
         self.next_action = "chat"

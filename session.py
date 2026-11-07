@@ -11,9 +11,12 @@ Blocking rule: next_question() refuses while any proposed card is still 'pending
 Logging: JSONL file (the paper used MongoDB; swap EventLog for a DB writer if needed).
 """
 import json
+import threading
 import time
 
+import config
 import function_agent
+import pipeline_trace as PT
 import question_agent as Q
 import softness as S
 
@@ -48,6 +51,8 @@ class Session:
         self.block_start = 0       # index in history.turns where the current block began
         self.next_action = None    # "clarify" | "suggest" | "open_ended"
         self.awaiting_answer = False
+        self.hooks = {}            # optional UI callbacks: stage(text), scored(dict), card(func)
+        self.cancelled = threading.Event()   # set by the UI's Cancel link; skips function generation
 
     # ----- helpers -----
     def _block_turns(self):
@@ -61,6 +66,11 @@ class Session:
 
     def pending(self):
         return [f for f in self.registry.funcs if f.status == "pending"]
+
+    def _hook(self, name, *args):
+        fn = self.hooks.get(name)
+        if fn:
+            fn(*args)
 
     def _ask(self, qtype, text):
         self.history.add(qtype, text)
@@ -80,21 +90,44 @@ class Session:
         if self.pending():
             raise ReviewPending("Review every proposed card before answering the next question.")
         self.history.answer_last(answer)
+        self.history.turns[-1].keywords = Q.keywords(answer)
         self.awaiting_answer = False
+        self.cancelled.clear()
         self.log.log("answer", text=answer)
+        PT.add("You", "Answer received", "io",
+               note="Your answer is stored. Two keywords are picked locally (no model) for the History node.",
+               outputs={"answer": answer, "keywords": self.history.turns[-1].keywords})
 
+        self._hook("stage", "Working out how open-ended this is…")
         res = self.softness_fn(self._block_user_messages())
         s = res["score"]
         self.history.turns[-1].softness = s
+        self.history.turns[-1].specification = res.get("specification") or ""
         action = S.policy(s)
+        PT.add("Policy", "Choose what happens next", "decision",
+               note="Paper Table 2: a high softness means the attribute is still vague, so only ask a clarifying question; "
+                    "a middle score also proposes functions; a low score means it is pinned down.",
+               inputs={"softness": s, "clarify_only_at_or_above": config.HIGH_SOFT, "suggest_at_or_below": config.LOW_SOFT},
+               outputs={"action": action,
+                        "meaning": {"clarify": "No functions. Ask a clarifying question.",
+                                    "generate_then_clarify": "Write functions, you review them, then a clarifying question.",
+                                    "generate_then_suggest": "Write functions, you review them, then an invitation to add more or move on."}[action]})
         self.log.log("softness", score=s, run_scores=res.get("run_scores"),
                      specification=res.get("specification"), policy=action)
+        self._hook("scored", {"score": s, "action": action, "specification": res.get("specification") or "",
+                              "keywords": self.history.turns[-1].keywords})
 
         new, failures = [], []
         if action == "clarify":
             self.next_action = "clarify"
+        elif self.cancelled.is_set():
+            failures = ["Cancelled by the user."]
+            self.next_action = "clarify"
+            self.log.log("cancelled")
         else:
-            new, failures = function_agent.generate_functions(self._block_qa(), self.registry, self.llm)
+            new, failures = function_agent.generate_functions(
+                self._block_qa(), self.registry, self.llm,
+                on_stage=lambda t: self._hook("stage", t), on_card=lambda f: self._hook("card", f))
             self.log.log("functions", ids=[f.id for f in new], names=[f.name for f in new],
                          failures=failures)
             self.next_action = "clarify" if action == "generate_then_clarify" else "suggest"
@@ -106,6 +139,9 @@ class Session:
         if f.status != "pending":
             raise ValueError(f"Function {fid} is not pending (status={f.status}).")
         self.log.log("review", fid=fid, decision=decision, feedback=feedback)
+        PT.add("You", f"Review: {decision} “{f.name}”", "io",
+               note="Accept adds a column to the attribute table. Reject drops the card. Refine asks the Function Agent again with your note.",
+               inputs={"card": f.name, "decision": decision, "feedback": feedback})
         if decision == "accept":
             if self.table is not None:
                 self.table.add_column(f)    # may raise ValueError; card then stays pending
@@ -116,8 +152,13 @@ class Session:
             if not feedback:
                 raise ValueError("refine needs feedback text")
             self.registry.set_status(fid, "refined")   # old version kept for history
+            f.refine_note = feedback
             qa = (self._block_qa() + f"\nRefinement request for '{f.name}': {feedback}")
-            new, failures = function_agent.generate_functions(qa, self.registry, self.llm)
+            new, failures = function_agent.generate_functions(
+                qa, self.registry, self.llm,
+                on_stage=lambda t: self._hook("stage", t), on_card=lambda n: self._hook("card", n))
+            if new:
+                f.superseded_by = new[0].id
             self.log.log("functions", ids=[n.id for n in new], names=[n.name for n in new],
                          failures=failures, refined_from=fid)
             return new
@@ -129,6 +170,7 @@ class Session:
             raise RuntimeError("Previous question is still unanswered.")
         if self.pending():
             raise ReviewPending(f"{len(self.pending())} card(s) still pending review.")
+        self._hook("stage", "Thinking of the next question…")
         if self.next_action == "clarify":
             q = Q.clarify(self.history, self.llm, [f.name for f in self.registry.funcs])
             return self._ask("clarify", q)

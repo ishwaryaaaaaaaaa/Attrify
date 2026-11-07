@@ -42,6 +42,12 @@
   .legend span { margin-right:10px; font-size:12px; }
   .dot { display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:4px; }
   #err { color:var(--reject); font-size:12px; min-height:16px; }
+  #chatLog { max-height:52vh; overflow:auto; padding-right:4px; margin-bottom:8px; }
+  .msg { margin:6px 0; } .msg .who { font-size:11px; color:var(--muted); margin-bottom:2px; }
+  .msg.me { text-align:right; }
+  .msg.me .bubble { display:inline-block; text-align:left; background:var(--open); color:#fff; padding:6px 10px; border-radius:10px; max-width:90%; white-space:pre-wrap; }
+  .msg.bot .q { white-space:pre-wrap; margin:0; }
+  .divider { text-align:center; color:var(--muted); font-size:11px; border-top:1px dashed var(--line); margin:10px 0 4px; padding-top:2px; }
 </style>
 </head>
 <body>
@@ -93,16 +99,33 @@ async function api(path, body) {
   finally { busy = false; render(); }
 }
 
+// Full transcript of the session: every question, every answer, in order. Text goes through textContent only.
+function chatLog() {
+  const log = el("div", { id: "chatLog" });
+  S.turns.forEach(t => {
+    if (t.new_block && t.i > 0) log.append(el("div", { class: "divider" }, "New topic"));
+    const cls = t.qtype === "open_ended" || t.qtype === "chat" ? "" : t.qtype;
+    log.append(el("div", { class: "msg bot" }, el("div", { class: "who" }, `Assistant · ${t.qtype.replaceAll("_", "-")}`),
+      el("div", { class: "q " + cls }, t.question)));
+    if (t.answer) {
+      const meta = [];
+      if (t.softness != null) meta.push(`softness ${t.softness}`);
+      S.functions.filter(f => f.turn === t.i).forEach(f => meta.push(`proposed "${f.name}" (${f.status})`));
+      log.append(el("div", { class: "msg me" }, el("div", { class: "who" }, "You"),
+        el("div", { class: "bubble" }, t.answer), meta.length ? el("div", { class: "muted" }, meta.join(" · ")) : null));
+    }
+  });
+  setTimeout(() => { log.scrollTop = log.scrollHeight; }, 0);
+  return log;
+}
+
 function renderChat() {
   const b = $("chatBody"); b.replaceChildren();
   if (!S) { b.append("Press \"Start new session\"."); return; }
   const pendingFns = S.functions.filter(f => S.pending.includes(f.id));
   const fails = S.last && S.last.failures.length ? ` (${S.last.failures.length} generation failure(s))` : "";
+  b.append(chatLog());
   if (S.last) b.append(el("div", { class: "muted" }, (S.last.score == null ? "Baseline: functions are generated after every turn" : `Last answer: softness ${S.last.score} → ${S.last.action.replaceAll("_", " ")}`) + fails));
-  if (S.current_question) {
-    const t = S.turns[S.turns.length - 1];
-    b.append(el("div", { class: "q " + (t.qtype === "open_ended" || t.qtype === "chat" ? "" : t.qtype) }, S.current_question));
-  }
   if (pendingFns.length) {
     b.append(el("div", { class: "muted" }, "Review every proposed attribute before continuing."));
     pendingFns.forEach(f => b.append(card(f)));

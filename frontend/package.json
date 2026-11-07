@@ -1,0 +1,30 @@
+{
+  "name": "attrify-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tanstack/react-virtual": "^3.14.26",
+    "d3-polygon": "^3.0.2",
+    "d3-scale": "^4.0.3",
+    "lucide-react": "^1.70.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-resizable-panels": "^4.18.1",
+    "zustand": "^5.0.16"
+  },
+  "devDependencies": {
+    "@types/d3-polygon": "^3.0.2",
+    "@types/d3-scale": "^4.0.9",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^6.2.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.6"
+  }
+}

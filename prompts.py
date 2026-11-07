@@ -165,7 +165,9 @@ Rules:
    (e.g. if they said the bare word "evidence" is not enough, do not count that word).
 8. Do not repeat any attribute listed as already existing (accepted, pending or rejected);
    if nothing genuinely new is supported by the dialogue, return an empty list [].
-Output strict JSON: [{"name": "...", "description": "...", "code": "..."}]"""
+9. Optionally add "steps": a list of 2 to 5 short plain-language steps describing how the
+   code computes the value (for example "Split the essay into sentences").
+Output strict JSON: [{"name": "...", "description": "...", "steps": ["..."], "code": "..."}]"""
 
 
 def function_user(qa_pairs, accepted_names, errors=None):

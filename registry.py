@@ -13,6 +13,11 @@ class Func:
     sample_values: list = field(default_factory=list)
     versions: list = field(default_factory=list)   # earlier (name, description, code)
     warnings: list = field(default_factory=list)   # e.g. constant output on all samples
+    steps: list = field(default_factory=list)      # numbered plain-language "how it works" steps
+    method_type: str = "surface statistic"         # word-list check | surface statistic | model-based
+    similar_to: str | None = None                  # name of a near-duplicate accepted attribute
+    superseded_by: int | None = None               # id of the card that replaced this refined one
+    refine_note: str | None = None                 # what the user asked to change when refining
 
 
 class Registry:

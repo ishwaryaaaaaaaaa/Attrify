@@ -1,0 +1,52 @@
+{"t": 1793971444.5884128, "event": "session_start", "mode": "baseline", "dataset": "argumentative"}
+{"t": 1793971444.590079, "event": "question", "qtype": "open_ended", "text": "Argumentative essays. What makes an argumentative essay good in your view? Describe something that matters to you in your own words."}
+{"t": 1793971444.8705692, "event": "ui_answer_submit", "turnId": "t0", "length": 32}
+{"t": 1793971444.8725643, "event": "ui_wait_start", "stage": "One moment\u2026"}
+{"t": 1793971444.8766236, "event": "answer", "text": "I like clear writing with facts."}
+{"t": 1793971444.8816237, "event": "ui_wait_end", "stage": "One moment\u2026", "duration": 9}
+{"t": 1793971444.8816237, "event": "ui_wait_start", "stage": "Planning\u2026"}
+{"t": 1793971444.8860662, "event": "ui_wait_end", "stage": "Planning\u2026", "duration": 2}
+{"t": 1793971444.8860662, "event": "ui_wait_start", "stage": "Writing code\u2026"}
+{"t": 1793971444.8887186, "event": "ui_wait_end", "stage": "Writing code\u2026", "duration": 1}
+{"t": 1793971444.8907328, "event": "ui_wait_start", "stage": "Checking the code\u2026"}
+{"t": 1793971444.8927338, "event": "ui_wait_end", "stage": "Checking the code\u2026", "duration": 1}
+{"t": 1793971444.8927338, "event": "ui_wait_start", "stage": "Trying it on sample essays\u2026"}
+{"t": 1793971445.0927083, "event": "ui_wait_start", "stage": "Trying it on sample essays\u2026"}
+{"t": 1793971445.0937147, "event": "ui_wait_end", "stage": "Trying it on sample essays\u2026", "duration": 209}
+{"t": 1793971445.2587554, "event": "functions", "ids": [0, 1], "names": ["Thesis claim words", "Statistics mentioned"], "failures": []}
+{"t": 1793971445.263893, "event": "ui_wait_end", "stage": "Trying it on sample essays\u2026", "duration": 171}
+{"t": 1793971445.263893, "event": "ui_cards_generated", "turnId": "t0", "count": 2, "retries": 0}
+{"t": 1793971445.3347487, "event": "ui_card_decision", "cardId": 0, "from": "pending", "to": "accepted", "source": "chat"}
+{"t": 1793971445.3367703, "event": "review", "fid": 0, "decision": "accept", "feedback": null}
+{"t": 1793971480.4367955, "event": "ui_card_decision", "cardId": 1, "from": "pending", "to": "rejected", "source": "chat"}
+{"t": 1793971480.4404836, "event": "review", "fid": 1, "decision": "reject", "feedback": null}
+{"t": 1793971480.4415016, "event": "question", "qtype": "chat", "text": "Could you say more about what you mean by that?"}
+{"t": 1793974942.6763086, "event": "session_start", "mode": "baseline", "dataset": "narrative"}
+{"t": 1793974942.6804173, "event": "question", "qtype": "open_ended", "text": "Narrative essays. What makes a narrative essay good in your view? Describe something that matters to you in your own words."}
+{"t": 1793978234.629028, "event": "session_start", "mode": "baseline", "dataset": "sample", "genre": "narrative"}
+{"t": 1793978234.6320286, "event": "question", "qtype": "open_ended", "text": "Narrative essays. What makes a narrative essay good in your view? Describe something that matters to you in your own words."}
+{"t": 1793978250.6192772, "event": "ui_answer_submit", "turnId": "t0", "length": 60}
+{"t": 1793978250.6202774, "event": "ui_wait_start", "stage": "One moment\u2026"}
+{"t": 1793978250.6287556, "event": "answer", "text": "i want an essay which is orginal and which is of 1 paragraph"}
+{"t": 1793978250.637751, "event": "ui_wait_end", "stage": "One moment\u2026", "duration": 333}
+{"t": 1793978250.640751, "event": "ui_wait_start", "stage": "Planning\u2026"}
+{"t": 1793978250.646262, "event": "ui_wait_end", "stage": "Planning\u2026", "duration": 4}
+{"t": 1793978250.647276, "event": "ui_wait_start", "stage": "Writing code\u2026"}
+{"t": 1793978257.7521586, "event": "ui_wait_start", "stage": "Checking the code\u2026"}
+": 7106}
+{"t": 1793978257.7627149, "event": "ui_wait_end", "stage": "Checking the code\u2026", "duration": 3}
+{"t": 1793978257.7718446, "event": "ui_wait_start", "stage": "Trying it on sample essays\u2026"}
+{"t": 1793978257.8968394, "event": "ui_wait_end", "stage": "Trying it on sample essays\u2026", "duration": 147}
+{"t": 1793978257.8968394, "event": "ui_wait_start", "stage": "Trying it on sample essays\u2026"}
+{"t": 1793978258.0180197, "event": "ui_wait_start", "stage": "Writing code\u2026"}
+{"t": 1793978258.0180197, "event": "ui_wait_end", "stage": "Trying it on sample essays\u2026", "duration": 122}
+{"t": 1793978265.0490463, "event": "ui_wait_end", "stage": "Writing code\u2026", "duration": 7031}
+{"t": 1793978265.0530448, "event": "ui_wait_start", "stage": "Checking the code\u2026"}
+{"t": 1793978265.0565553, "event": "ui_wait_end", "stage": "Checking the code\u2026", "duration": 2}
+{"t": 1793978265.0595746, "event": "ui_wait_start", "stage": "Trying it on sample essays\u2026"}
+{"t": 1793978265.3990672, "event": "ui_wait_end", "stage": "Trying it on sample essays\u2026", "duration": 348}
+{"t": 1793978265.5760338, "event": "functions", "ids": [0, 1], "names": ["Originality of the Essay", "Paragraph Count Preference"], "failures": []}
+{"t": 1793978266.8468685, "event": "ui_cards_generated", "turnId": "t0", "count": 2, "retries": 0}
+tion": 1449}
+{"t": 1793978400.8839855, "event": "session_start", "mode": "baseline", "dataset": "sample", "genre": "argumentative"}
+{"t": 1793978400.884964, "event": "question", "qtype": "open_ended", "text": "Argumentative essays. What makes an argumentative essay good in your view? Describe something that matters to you in your own words."}

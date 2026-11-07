@@ -1,0 +1,298 @@
+{"t": 1793971098.9714432, "event": "session_start", "mode": "attrify", "dataset": "argumentative"}
+{"t": 1793971098.978944, "event": "question", "qtype": "open_ended", "text": "Argumentative essays. What makes an argumentative essay good in your view? Describe something that matters to you in your own words."}
+{"t": 1793971120.1061265, "event": "ui_answer_submit", "turnId": "t0", "length": 33}
+{"t": 1793971120.1092296, "event": "ui_wait_start", "stage": "One moment\u2026"}
+{"t": 1793971120.1143978, "event": "answer", "text": "I like essays that feel original."}
+{"t": 1793971120.1143978, "event": "softness", "score": 70, "run_scores": [70], "specification": "The user wants: I like essays that feel original.", "policy": "clarify"}
+{"t": 1793971120.1163998, "event": "question", "qtype": "clarify", "text": "Could you say more about what you mean by that?"}
+{"t": 1793971120.1372626, "event": "ui_wait_end", "stage": "One moment\u2026", "duration": 31}
+{"t": 1793971120.1407697, "event": "ui_wait_start", "stage": "Working out how open-ended this is\u2026"}
+{"t": 1793971120.1438148, "event": "ui_scored", "turnId": "t0", "softness": 70}
+{"t": 1793971120.147264, "event": "ui_wait_end", "stage": "Working out how open-ended this is\u2026", "duration": 1}
+{"t": 1793971120.1508904, "event": "ui_wait_start", "stage": "Thinking of the next question\u2026"}
+{"t": 1793971120.1537926, "event": "ui_wait_end", "stage": "Thinking of the next question\u2026", "duration": 6}
+{"t": 1793971147.1125832, "event": "ui_answer_submit", "turnId": "t1", "length": 51}
+{"t": 1793971147.1145828, "event": "ui_wait_start", "stage": "One moment\u2026"}
+{"t": 1793971147.1187785, "event": "answer", "text": "New ideas and surprising evidence, like statistics."}
+{"t": 1793971147.1202877, "event": "softness", "score": 45, "run_scores": [45], "specification": "The user wants: I like essays that feel original. / New ideas and surprising evidence, like statistics.", "policy": "generate_then_clarify"}
+{"t": 1793971147.4178839, "event": "ui_wait_end", "stage": "One moment\u2026", "duration": 11}
+{"t": 1793971147.4178839, "event": "ui_wait_start", "stage": "Working out how open-ended this is\u2026"}
+{"t": 1793971147.4196475, "event": "ui_scored", "turnId": "t1", "softness": 45}
+{"t": 1793971147.4202824, "event": "ui_wait_end", "stage": "Working out how open-ended this is\u2026", "duration": 5}
+{"t": 1793971147.4237187, "event": "ui_wait_start", "stage": "Planning\u2026"}
+{"t": 1793971147.4259796, "event": "ui_wait_end", "stage": "Planning\u2026", "duration": 3}
+{"t": 1793971147.4259796, "event": "ui_wait_start", "stage": "Writing code\u2026"}
+{"t": 1793971147.4269898, "event": "ui_wait_end", "stage": "Writing code\u2026", "duration": 1}
+{"t": 1793971147.4269898, "event": "ui_wait_start", "stage": "Checking the code\u2026"}
+{"t": 1793971147.429746, "event": "ui_wait_end", "stage": "Checking the code\u2026", "duration": 0}
+{"t": 1793971147.4310133, "event": "ui_wait_start", "stage": "Trying it on sample essays\u2026"}
+{"t": 1793971147.4310133, "event": "ui_wait_start", "stage": "Trying it on sample essays\u2026"}
+{"t": 1793971147.4320261, "event": "ui_wait_end", "stage": "Trying it on sample essays\u2026", "duration": 180}
+{"t": 1793971147.4710178, "event": "functions", "ids": [0, 1], "names": ["Thesis claim words", "Statistics mentioned"], "failures": []}
+{"t": 1793971147.477009, "event": "ui_wait_end", "stage": "Trying it on sample essays\u2026", "duration": 165}
+{"t": 1793971147.477009, "event": "ui_cards_generated", "turnId": "t1", "count": 2, "retries": 0}
+{"t": 1793971161.754699, "event": "ui_card_decision", "cardId": 0, "from": "pending", "to": "accepted", "source": "chat"}
+{"t": 1793971161.754699, "event": "review", "fid": 0, "decision": "accept", "feedback": null}
+{"t": 1793971183.3169258, "event": "ui_card_decision", "cardId": 1, "from": "pending", "to": "accepted", "source": "chat"}
+{"t": 1793971183.329798, "event": "review", "fid": 1, "decision": "accept", "feedback": null}
+{"t": 1793971183.4205706, "event": "question", "qtype": "clarify", "text": "Could you say more about what you mean by that?"}
+{"t": 1793971193.7772958, "event": "ui_answer_submit", "turnId": "t2", "length": 70}
+{"t": 1793971193.7804, "event": "ui_wait_start", "stage": "One moment\u2026"}
+{"t": 1793971193.7848992, "event": "answer", "text": "Evidence must be a number with a year, and the thesis must say should."}
+{"t": 1793971193.7859416, "event": "softness", "score": 20, "run_scores": [20], "specification": "The user wants: I like essays that feel original. / New ideas and surprising evidence, like statistics. / Evidence must be a number with", "policy": "generate_then_suggest"}
+{"t": 1793971193.9461663, "event": "ui_wait_end", "stage": "One moment\u2026", "duration": 36}
+{"t": 1793971193.9481778, "event": "ui_wait_start", "stage": "Working out how open-ended this is\u2026"}
+{"t": 1793971193.9516063, "event": "ui_scored", "turnId": "t2", "softness": 20}
+{"t": 1793971193.95362, "event": "ui_wait_end", "stage": "Working out how open-ended this is\u2026", "duration": 2}
+{"t": 1793971193.9556296, "event": "ui_wait_start", "stage": "Planning\u2026"}
+{"t": 1793971193.9591596, "event": "ui_wait_end", "stage": "Planning\u2026", "duration": 1}
+{"t": 1793971193.9612975, "event": "ui_wait_start", "stage": "Writing code\u2026"}
+{"t": 1793971193.963308, "event": "ui_wait_end", "stage": "Writing code\u2026", "duration": 1}
+{"t": 1793971193.9656913, "event": "ui_wait_start", "stage": "Checking the code\u2026"}
+{"t": 1793971193.9688292, "event": "ui_wait_end", "stage": "Checking the code\u2026", "duration": 1}
+{"t": 1793971193.9708369, "event": "ui_wait_start", "stage": "Trying it on sample essays\u2026"}
+{"t": 1793971267.8264663, "event": "session_start", "mode": "attrify", "dataset": "argumentative"}
+{"t": 1793971267.8284729, "event": "question", "qtype": "open_ended", "text": "Argumentative essays. What makes an argumentative essay good in your view? Describe something that matters to you in your own words."}
+{"t": 1793971268.120217, "event": "ui_answer_submit", "turnId": "t0", "length": 33}
+{"t": 1793971268.1222165, "event": "ui_wait_start", "stage": "One moment\u2026"}
+{"t": 1793971268.1274407, "event": "answer", "text": "I like essays that feel original."}
+{"t": 1793971268.1285317, "event": "softness", "score": 70, "run_scores": [70], "specification": "The user wants: I like essays that feel original.", "policy": "clarify"}
+{"t": 1793971268.1285317, "event": "question", "qtype": "clarify", "text": "Could you say more about what you mean by that?"}
+{"t": 1793971268.131533, "event": "ui_wait_end", "stage": "One moment\u2026", "duration": 12}
+{"t": 1793971268.1325312, "event": "ui_wait_start", "stage": "Working out how open-ended this is\u2026"}
+{"t": 1793971268.1355414, "event": "ui_scored", "turnId": "t0", "softness": 70}
+{"t": 1793971268.1355414, "event": "ui_wait_end", "stage": "Working out how open-ended this is\u2026", "duration": 2}
+{"t": 1793971268.1375425, "event": "ui_wait_start", "stage": "Thinking of the next question\u2026"}
+{"t": 1793971268.1385407, "event": "ui_wait_end", "stage": "Thinking of the next question\u2026", "duration": 4}
+{"t": 1793971268.4147582, "event": "ui_wait_start", "stage": "One moment\u2026"}
+{"t": 1793971268.4147582, "event": "ui_answer_submit", "turnId": "t1", "length": 51}
+{"t": 1793971268.4167576, "event": "answer", "text": "New ideas and surprising evidence, like statistics."}
+{"t": 1793971268.4177587, "event": "softness", "score": 45, "run_scores": [45], "specification": "The user wants: I like essays that feel original. / New ideas and surprising evidence, like statistics.", "policy": "generate_then_clarify"}
+{"t": 1793971268.4238923, "event": "ui_wait_start", "stage": "Working out how open-ended this is\u2026"}
+{"t": 1793971268.4238923, "event": "ui_wait_end", "stage": "One moment\u2026", "duration": 7}
+{"t": 1793971268.4278634, "event": "ui_scored", "turnId": "t1", "softness": 45}
+{"t": 1793971268.428874, "event": "ui_wait_end", "stage": "Working out how open-ended this is\u2026", "duration": 2}
+{"t": 1793971268.4330578, "event": "ui_wait_start", "stage": "Planning\u2026"}
+{"t": 1793971268.4342527, "event": "ui_wait_end", "stage": "Planning\u2026", "duration": 2}
+{"t": 1793971268.4368453, "event": "ui_wait_start", "stage": "Writing code\u2026"}
+{"t": 1793971268.437843, "event": "ui_wait_end", "stage": "Writing code\u2026", "duration": 1}
+{"t": 1793971268.437843, "event": "ui_wait_start", "stage": "Checking the code\u2026"}
+{"t": 1793971268.4388447, "event": "ui_wait_end", "stage": "Checking the code\u2026", "duration": 1}
+{"t": 1793971268.4398441, "event": "ui_wait_start", "stage": "Trying it on sample essays\u2026"}
+{"t": 1793971268.8390958, "event": "ui_wait_start", "stage": "Trying it on sample essays\u2026"}
+{"t": 1793971268.8390958, "event": "ui_wait_end", "stage": "Trying it on sample essays\u2026", "duration": 410}
+{"t": 1793971269.06565, "event": "functions", "ids": [0, 1], "names": ["Thesis claim words", "Statistics mentioned"], "failures": []}
+{"t": 1793971269.0734336, "event": "ui_wait_end", "stage": "Trying it on sample essays\u2026", "duration": 235}
+{"t": 1793971269.0734336, "event": "ui_cards_generated", "turnId": "t1", "count": 2, "retries": 0}
+{"t": 1793971269.4914064, "event": "ui_card_decision", "cardId": 0, "from": "pending", "to": "accepted", "source": "chat"}
+{"t": 1793971269.492929, "event": "review", "fid": 0, "decision": "accept", "feedback": null}
+{"t": 1793971295.2145472, "event": "ui_card_decision", "cardId": 1, "from": "pending", "to": "accepted", "source": "chat"}
+{"t": 1793971295.2154953, "event": "review", "fid": 1, "decision": "accept", "feedback": null}
+{"t": 1793971295.3776886, "event": "question", "qtype": "clarify", "text": "Could you say more about what you mean by that?"}
+{"t": 1793971295.6456754, "event": "ui_answer_submit", "turnId": "t2", "length": 70}
+{"t": 1793971295.6456754, "event": "ui_wait_start", "stage": "One moment\u2026"}
+{"t": 1793971295.6494954, "event": "answer", "text": "Evidence must be a number with a year, and the thesis must say should."}
+{"t": 1793971295.6494954, "event": "softness", "score": 20, "run_scores": [20], "specification": "The user wants: I like essays that feel original. / New ideas and surprising evidence, like statistics. / Evidence must be a number with", "policy": "generate_then_suggest"}
+{"t": 1793971295.6619039, "event": "ui_wait_start", "stage": "Working out how open-ended this is\u2026"}
+{"t": 1793971295.6619039, "event": "ui_wait_end", "stage": "One moment\u2026", "duration": 17}
+{"t": 1793971295.6653128, "event": "ui_scored", "turnId": "t2", "softness": 20}
+{"t": 1793971295.6663132, "event": "ui_wait_end", "stage": "Working out how open-ended this is\u2026", "duration": 1}
+{"t": 1793971295.6686764, "event": "ui_wait_start", "stage": "Planning\u2026"}
+{"t": 1793971295.6696918, "event": "ui_wait_end", "stage": "Planning\u2026", "duration": 0}
+{"t": 1793971295.673201, "event": "ui_wait_start", "stage": "Writing code\u2026"}
+{"t": 1793971295.6742127, "event": "ui_wait_end", "stage": "Writing code\u2026", "duration": 0}
+{"t": 1793971295.6766555, "event": "ui_wait_start", "stage": "Checking the code\u2026"}
+{"t": 1793971295.6766555, "event": "ui_wait_end", "stage": "Checking the code\u2026", "duration": 0}
+{"t": 1793971295.6806536, "event": "ui_wait_start", "stage": "Trying it on sample essays\u2026"}
+{"t": 1793971295.8277419, "event": "ui_wait_end", "stage": "Trying it on sample essays\u2026", "duration": 164}
+{"t": 1793971295.9731443, "event": "functions", "ids": [2, 3], "names": ["Sentence length variance", "First person rate"], "failures": []}
+{"t": 1793971295.98526, "event": "ui_cards_generated", "turnId": "t2", "count": 2, "retries": 0}
+{"t": 1793971295.98526, "event": "ui_wait_end", "stage": "Trying it on sample essays\u2026", "duration": 159}
+{"t": 1793971331.6103191, "event": "ui_details_open", "cardId": 2}
+{"t": 1793971331.9294667, "event": "ui_more_examples", "cardId": 2}
+{"t": 1793971339.8885453, "event": "ui_card_refine", "cardId": 2, "text": "Only count long sentences"}
+{"t": 1793971339.891462, "event": "review", "fid": 2, "decision": "refine", "feedback": "Only count long sentences"}
+{"t": 1793971340.0691478, "event": "functions", "ids": [4, 5], "names": ["Essay length in words", "Hedging words"], "failures": [], "refined_from": 2}
+{"t": 1793971347.0329657, "event": "ui_card_decision", "cardId": 3, "from": "pending", "to": "accepted", "source": "chat"}
+{"t": 1793971347.0353343, "event": "review", "fid": 3, "decision": "accept", "feedback": null}
+{"t": 1793971347.4386463, "event": "ui_card_decision", "cardId": 4, "from": "pending", "to": "accepted", "source": "chat"}
+{"t": 1793971347.4391792, "event": "review", "fid": 4, "decision": "accept", "feedback": null}
+{"t": 1793971389.245234, "event": "ui_card_decision", "cardId": 5, "from": "pending", "to": "accepted", "source": "chat"}
+{"t": 1793971389.245234, "event": "review", "fid": 5, "decision": "accept", "feedback": null}
+{"t": 1793971389.3273754, "event": "question", "qtype": "suggest", "text": "Before we continue -- do you have any additional thoughts or suggestions you'd like to explore? You can describe something entirely new or build on what we've discussed. Otherwise, we'll move on to the next question."}
+{"t": 1793971615.619422, "event": "session_start", "mode": "attrify", "dataset": "argumentative"}
+{"t": 1793971615.619422, "event": "question", "qtype": "open_ended", "text": "Argumentative essays. What makes an argumentative essay good in your view? Describe something that matters to you in your own words."}
+{"t": 1793971615.911125, "event": "ui_answer_submit", "turnId": "t0", "length": 10}
+{"t": 1793971615.9121253, "event": "ui_wait_start", "stage": "One moment\u2026"}
+{"t": 1793971615.9156294, "event": "answer", "text": "vague idea"}
+{"t": 1793971615.9156294, "event": "softness", "score": 70, "run_scores": [70], "specification": "The user wants: vague idea", "policy": "clarify"}
+{"t": 1793971615.9166303, "event": "question", "qtype": "clarify", "text": "Could you say more about what you mean by that?"}
+{"t": 1793971615.9186296, "event": "ui_wait_end", "stage": "One moment\u2026", "duration": 8}
+{"t": 1793971615.9196293, "event": "ui_wait_start", "stage": "Working out how open-ended this is\u2026"}
+{"t": 1793971615.923328, "event": "ui_scored", "turnId": "t0", "softness": 70}
+{"t": 1793971615.923328, "event": "ui_wait_end", "stage": "Working out how open-ended this is\u2026", "duration": 2}
+{"t": 1793971615.9242685, "event": "ui_wait_start", "stage": "Thinking of the next question\u2026"}
+{"t": 1793971615.926241, "event": "ui_wait_end", "stage": "Thinking of the next question\u2026", "duration": 5}
+{"t": 1793971616.2042987, "event": "ui_answer_submit", "turnId": "t1", "length": 22}
+{"t": 1793971616.2042987, "event": "ui_wait_start", "stage": "One moment\u2026"}
+{"t": 1793971616.2073011, "event": "answer", "text": "new ideas and evidence"}
+{"t": 1793971616.2093003, "event": "softness", "score": 45, "run_scores": [45], "specification": "The user wants: vague idea / new ideas and evidence", "policy": "generate_then_clarify"}
+{"t": 1793971616.213998, "event": "ui_wait_end", "stage": "One moment\u2026", "duration": 8}
+{"t": 1793971616.213998, "event": "ui_wait_start", "stage": "Working out how open-ended this is\u2026"}
+{"t": 1793971616.213998, "event": "ui_scored", "turnId": "t1", "softness": 45}
+{"t": 1793971616.2203965, "event": "ui_wait_end", "stage": "Working out how open-ended this is\u2026", "duration": 3}
+{"t": 1793971616.2203965, "event": "ui_wait_start", "stage": "Planning\u2026"}
+{"t": 1793971616.2221394, "event": "ui_wait_end", "stage": "Planning\u2026", "duration": 1}
+{"t": 1793971616.224136, "event": "ui_wait_start", "stage": "Writing code\u2026"}
+{"t": 1793971616.228137, "event": "ui_wait_end", "stage": "Writing code\u2026", "duration": 4}
+{"t": 1793971616.2291355, "event": "ui_wait_start", "stage": "Trying it on sample essays\u2026"}
+{"t": 1793971616.2291355, "event": "ui_wait_end", "stage": "Checking the code\u2026", "duration": 1}
+{"t": 1793971616.2291355, "event": "ui_wait_start", "stage": "Checking the code\u2026"}
+{"t": 1793971616.4838119, "event": "ui_wait_end", "stage": "Trying it on sample essays\u2026", "duration": 262}
+{"t": 1793971616.7550108, "event": "functions", "ids": [0, 1], "names": ["Thesis claim words", "Statistics mentioned"], "failures": []}
+{"t": 1793971616.7616394, "event": "ui_wait_end", "stage": "Trying it on sample essays\u2026", "duration": 278}
+{"t": 1793971616.7616394, "event": "ui_cards_generated", "turnId": "t1", "count": 2, "retries": 0}
+{"t": 1793971616.8210614, "event": "ui_card_decision", "cardId": 0, "from": "pending", "to": "accepted", "source": "chat"}
+{"t": 1793971616.8221078, "event": "review", "fid": 0, "decision": "accept", "feedback": null}
+{"t": 1793971617.3291063, "event": "ui_card_decision", "cardId": 1, "from": "pending", "to": "accepted", "source": "chat"}
+{"t": 1793971617.3291063, "event": "review", "fid": 1, "decision": "accept", "feedback": null}
+{"t": 1793971617.4188523, "event": "question", "qtype": "clarify", "text": "Could you say more about what you mean by that?"}
+{"t": 1793971617.8303492, "event": "ui_table_sort", "ids": [0]}
+{"t": 1793971618.0328424, "event": "ui_row_open", "ids": [0]}
+{"t": 1793977274.9369664, "event": "session_start", "mode": "attrify", "dataset": "argumentative"}
+{"t": 1793977274.9390213, "event": "question", "qtype": "open_ended", "text": "Argumentative essays. What makes an argumentative essay good in your view? Describe something that matters to you in your own words."}
+{"t": 1793977275.6800423, "event": "session_start", "mode": "attrify", "dataset": "argumentative"}
+{"t": 1793977275.6810415, "event": "question", "qtype": "open_ended", "text": "Argumentative essays. What makes an argumentative essay good in your view? Describe something that matters to you in your own words."}
+{"t": 1793977566.4260623, "event": "session_start", "mode": "attrify", "dataset": "argumentative"}
+{"t": 1793977566.4270685, "event": "question", "qtype": "open_ended", "text": "Argumentative essays. What makes an argumentative essay good in your view? Describe something that matters to you in your own words."}
+{"t": 1793977628.7920828, "event": "session_start", "mode": "attrify", "dataset": "argumentative"}
+{"t": 1793977628.793042, "event": "question", "qtype": "open_ended", "text": "Argumentative essays. What makes an argumentative essay good in your view? Describe something that matters to you in your own words."}
+{"t": 1793977826.9591837, "event": "session_start", "mode": "attrify", "dataset": "sample", "genre": "argumentative"}
+{"t": 1793977826.9601984, "event": "question", "qtype": "open_ended", "text": "Argumentative essays. What makes an argumentative essay good in your view? Describe something that matters to you in your own words."}
+{"t": 1793977945.8309162, "event": "ui_answer_submit", "turnId": "t0", "length": 37}
+{"t": 1793977945.8329146, "event": "ui_wait_start", "stage": "One moment\u2026"}
+{"t": 1793977945.8359146, "event": "answer", "text": "i want the essay to be in 1 paragraph"}
+{"t": 1793977945.8430767, "event": "ui_wait_start", "stage": "Working out how open-ended this is\u2026"}
+{"t": 1793977945.8430767, "event": "ui_wait_end", "stage": "One moment\u2026", "duration": 321}
+{"t": 1793978028.8762026, "event": "softness", "score": 52, "run_scores": [35, 53, 69], "specification": "i want the essay to be in 1 paragraph", "policy": "generate_then_clarify"}
+{"t": 1793978029.2009542, "event": "ui_scored", "turnId": "t0", "softness": 52}
+{"t": 1793978029.2019525, "event": "ui_wait_end", "stage": "Working out how open-ended this is\u2026", "duration": 83051}
+{"t": 1793978029.2101748, "event": "ui_wait_start", "stage": "Planning\u2026"}
+ration": 12}
+{"t": 1793978029.2237058, "event": "ui_wait_start", "stage": "Writing code\u2026"}
+{"t": 1793978032.653887, "event": "ui_wait_end", "stage": "Writing code\u2026", "duration": 3748}
+{"t": 1793978032.6548848, "event": "ui_wait_end", "stage": "Checking the code\u2026", "duration": 2}
+{"t": 1793978032.656926, "event": "ui_wait_start", "stage": "Trying it on sample essays\u2026"}
+{"t": 1793978032.7626896, "event": "ui_wait_end", "stage": "Trying it on sample essays\u2026", "duration": 107}
+{"t": 1793978032.7636898, "event": "ui_wait_start", "stage": "Writing code\u2026"}
+{"t": 1793978037.054634, "event": "ui_wait_end", "stage": "Checking the code\u2026", "duration": 2}
+{"t": 1793978037.0561428, "event": "ui_wait_start", "stage": "Trying it on sample essays\u2026"}
+{"t": 1793978037.2145247, "event": "functions", "ids": [0], "names": ["Single Paragraph Requirement Score"], "failures": []}
+{"t": 1793978037.2246192, "event": "ui_cards_generated", "turnId": "t0", "count": 1, "retries": 0}
+tion": 172}
+{"t": 1793978051.8592396, "event": "session_start", "mode": "attrify", "dataset": "sample", "genre": "argumentative"}
+{"t": 1793978051.8602448, "event": "question", "qtype": "open_ended", "text": "Argumentative essays. What makes an argumentative essay good in your view? Describe something that matters to you in your own words."}
+{"t": 1793978064.9047508, "event": "ui_answer_submit", "turnId": "t0", "length": 22}
+{"t": 1793978064.9068682, "event": "ui_wait_start", "stage": "One moment\u2026"}
+{"t": 1793978064.916214, "event": "answer", "text": "i want a orginal essay"}
+{"t": 1793978064.9401855, "event": "ui_wait_start", "stage": "Working out how open-ended this is\u2026"}
+{"t": 1793978073.4035017, "event": "softness", "score": 74, "run_scores": [69, 76, 76], "specification": "i want a orginal essay", "policy": "clarify"}
+{"t": 1793978073.408029, "event": "ui_scored", "turnId": "t0", "softness": 74}
+{"t": 1793978073.4110315, "event": "ui_wait_end", "stage": "Working out how open-ended this is\u2026", "duration": 8482}
+{"t": 1793978073.4130328, "event": "ui_wait_start", "stage": "Thinking of the next question\u2026"}
+{"t": 1793978074.6120777, "event": "question", "qtype": "clarify", "text": "What specific elements or qualities do you consider essential for an essay to be original, such as unique ideas, personal experiences, or a distinct writing style?"}
+{"t": 1793978074.6173499, "event": "ui_wait_end", "stage": "Thinking of the next question\u2026", "duration": 1208}
+{"t": 1793978095.9020255, "event": "ui_answer_submit", "turnId": "t1", "length": 18}
+{"t": 1793978095.9040332, "event": "ui_wait_start", "stage": "One moment\u2026"}
+{"t": 1793978095.9080927, "event": "answer", "text": "i want novel ideas"}
+{"t": 1793978095.9176385, "event": "ui_wait_end", "stage": "One moment\u2026", "duration": 14}
+{"t": 1793978095.9220452, "event": "ui_wait_start", "stage": "Working out how open-ended this is\u2026"}
+{"t": 1793978103.7222881, "event": "softness", "score": 72, "run_scores": [77, 69, 69], "specification": "The essay should contain original content and novel ideas.", "policy": "clarify"}
+{"t": 1793978103.728624, "event": "ui_scored", "turnId": "t1", "softness": 72}
+{"t": 1793978103.7317517, "event": "ui_wait_end", "stage": "Working out how open-ended this is\u2026", "duration": 7815}
+{"t": 1793978103.7347536, "event": "ui_wait_start", "stage": "Thinking of the next question\u2026"}
+{"t": 1793978105.0701075, "event": "question", "qtype": "clarify", "text": "What type of novel ideas do you find most compelling in an essay\u2014are you looking for innovative arguments, uncommon perspectives, or perhaps new approaches to familiar topics?"}
+{"t": 1793978105.077164, "event": "ui_wait_end", "stage": "Thinking of the next question\u2026", "duration": 1348}
+{"t": 1793978124.5053782, "event": "ui_answer_submit", "turnId": "t2", "length": 26}
+{"t": 1793978124.5134342, "event": "ui_wait_start", "stage": "One moment\u2026"}
+{"t": 1793978124.519163, "event": "answer", "text": "i want it in one paragraph"}
+{"t": 1793978124.8091793, "event": "ui_wait_end", "stage": "One moment\u2026", "duration": 22}
+{"t": 1793978124.8101802, "event": "ui_wait_start", "stage": "Working out how open-ended this is\u2026"}
+{"t": 1793978132.5693161, "event": "softness", "score": 66, "run_scores": [67, 63, 69], "specification": "The essay should be original and contain novel ideas, presented in one paragraph.", "policy": "clarify"}
+{"t": 1793978132.576307, "event": "ui_scored", "turnId": "t2", "softness": 66}
+{"t": 1793978132.576307, "event": "ui_wait_end", "stage": "Working out how open-ended this is\u2026", "duration": 8050}
+{"t": 1793978132.5792723, "event": "ui_wait_start", "stage": "Thinking of the next question\u2026"}
+{"t": 1793978133.8931508, "event": "question", "qtype": "clarify", "text": "Can you specify what type of innovative arguments or uncommon perspectives you would like to see in that one paragraph, perhaps by providing an example or a specific topic of interest?"}
+{"t": 1793978133.9062226, "event": "ui_wait_end", "stage": "Thinking of the next question\u2026", "duration": 1328}
+{"t": 1793978153.852648, "event": "ui_answer_submit", "turnId": "t3", "length": 12}
+{"t": 1793978153.85879, "event": "ui_wait_start", "stage": "One moment\u2026"}
+{"t": 1793978153.87085, "event": "answer", "text": "about school"}
+{"t": 1793978154.1610248, "event": "ui_wait_end", "stage": "One moment\u2026", "duration": 26}
+{"t": 1793978154.1620362, "event": "ui_wait_start", "stage": "Working out how open-ended this is\u2026"}
+{"t": 1793978160.929287, "event": "softness", "score": 77, "run_scores": [76, 78, 76], "specification": "The essay should be an original piece that presents novel ideas, written in one paragraph, and focused on the topic of school.", "policy": "clarify"}
+{"t": 1793978160.934293, "event": "ui_scored", "turnId": "t3", "softness": 77}
+{"t": 1793978160.9367995, "event": "ui_wait_end", "stage": "Working out how open-ended this is\u2026", "duration": 7057}
+{"t": 1793978160.9378088, "event": "ui_wait_start", "stage": "Thinking of the next question\u2026"}
+{"t": 1793978162.6258638, "event": "question", "qtype": "clarify", "text": "What specific aspect of school would you like the innovative argument or uncommon perspective to focus on, such as education policies, student experiences, or the role of technology in learning?"}
+{"t": 1793978162.6321006, "event": "ui_wait_end", "stage": "Thinking of the next question\u2026", "duration": 1696}
+{"t": 1793978170.365197, "event": "ui_answer_submit", "turnId": "t4", "length": 14}
+{"t": 1793978170.370716, "event": "ui_wait_start", "stage": "One moment\u2026"}
+{"t": 1793978170.3802276, "event": "answer", "text": "school timings"}
+{"t": 1793978170.6832116, "event": "ui_wait_end", "stage": "One moment\u2026", "duration": 22}
+\u2026"}
+{"t": 1793978176.6860635, "event": "softness", "score": 80, "run_scores": [81, 78, 81], "specification": "The essay should be an original piece that presents novel ideas in one paragraph about school timings.", "policy": "clarify"}
+{"t": 1793978176.6901808, "event": "ui_scored", "turnId": "t4", "softness": 80}
+{"t": 1793978176.6931796, "event": "ui_wait_start", "stage": "Thinking of the next question\u2026"}
+, "duration": 6304}
+{"t": 1793978177.8751442, "event": "question", "qtype": "clarify", "text": "What specific innovative argument or uncommon perspective about school timings are you interested in exploring, such as the impact on student productivity, mental health, or extracurricular activities?"}
+{"t": 1793978177.878686, "event": "ui_wait_end", "stage": "Thinking of the next question\u2026", "duration": 1188}
+{"t": 1793987377.9067676, "event": "session_start", "mode": "attrify", "dataset": "argumentative"}
+{"t": 1793987377.917245, "event": "question", "qtype": "open_ended", "text": "Argumentative essays. What makes an argumentative essay good in your view? Describe something that matters to you in your own words."}
+{"t": 1793987410.669409, "event": "session_start", "mode": "attrify", "dataset": "sample", "genre": "argumentative"}
+{"t": 1793987410.6713703, "event": "question", "qtype": "open_ended", "text": "Argumentative essays. What makes an argumentative essay good in your view? Describe something that matters to you in your own words."}
+{"t": 1793987436.7234552, "event": "ui_answer_submit", "turnId": "t0", "length": 82}
+{"t": 1793987436.72843, "event": "ui_wait_start", "stage": "One moment\u2026"}
+{"t": 1793987436.7352135, "event": "answer", "text": "A good argumentative essay has a clear thesis and backs it with specific evidence."}
+{"t": 1793987436.7501962, "event": "ui_wait_start", "stage": "Working out how open-ended this is\u2026"}
+{"t": 1793987436.7538757, "event": "ui_wait_end", "stage": "One moment\u2026", "duration": 342}
+{"t": 1793987490.368607, "event": "session_start", "mode": "attrify", "dataset": "sample", "genre": "argumentative"}
+{"t": 1793987490.3718028, "event": "question", "qtype": "open_ended", "text": "Argumentative essays. What makes an argumentative essay good in your view? Describe something that matters to you in your own words."}
+{"t": 1793987490.692166, "event": "answer", "text": "A good argumentative essay has a clear thesis and backs it with specific evidence."}
+{"t": 1793987490.718851, "event": "softness", "score": 82, "run_scores": [82, 82, 82], "specification": "A good argumentative essay has a clear thesis and backs it with specific evidence.", "policy": "clarify"}
+{"t": 1793987490.7208557, "event": "question", "qtype": "clarify", "text": "Could you say more about what you mean by that?"}
+{"t": 1793987517.0851147, "event": "answer", "text": "I want the thesis to be stated in the first paragraph and the evidence to include numbers."}
+{"t": 1793987517.0988352, "event": "softness", "score": 52, "run_scores": [52, 52, 52], "specification": "The user wants:  (initial description): A good argumentative essay has a clear thesis and backs it with specific evidence.  Message 2 (latest): I want the t", "policy": "generate_then_clarify"}
+{"t": 1793987517.67645, "event": "functions", "ids": [0, 1], "names": ["Thesis claim words", "Statistics mentioned"], "failures": []}
+{"t": 1793987517.714723, "event": "review", "fid": 0, "decision": "accept", "feedback": null}
+{"t": 1793987525.0706625, "event": "review", "fid": 1, "decision": "accept", "feedback": null}
+{"t": 1793987525.1908934, "event": "question", "qtype": "clarify", "text": "Could you say more about what you mean by that?"}
+{"t": 1793994827.661749, "event": "session_start", "mode": "attrify", "dataset": "sample", "genre": "argumentative"}
+{"t": 1793994827.6638558, "event": "question", "qtype": "open_ended", "text": "Argumentative essays. What makes an argumentative essay good in your view? Describe something that matters to you in your own words."}
+{"t": 1793994839.012451, "event": "ui_answer_submit", "turnId": "t0", "length": 31}
+{"t": 1793994839.0139718, "event": "ui_wait_start", "stage": "One moment\u2026"}
+{"t": 1793994839.0185115, "event": "answer", "text": "i want the essay to be original"}
+{"t": 1793994839.0401897, "event": "ui_wait_end", "stage": "One moment\u2026", "duration": 25}
+{"t": 1793994839.044743, "event": "ui_wait_start", "stage": "Working out how open-ended this is\u2026"}
+{"t": 1793994843.572167, "event": "ui_node_open", "turnId": "t0"}
+{"t": 1793994890.7007065, "event": "softness", "score": 81, "run_scores": [83, 83, 77], "specification": "i want the essay to be original", "policy": "clarify"}
+{"t": 1793994890.772448, "event": "ui_scored", "turnId": "t0", "softness": 81}
+{"t": 1793994890.8003223, "event": "ui_wait_end", "stage": "Working out how open-ended this is\u2026", "duration": 51770}
+{"t": 1793994890.8281062, "event": "ui_wait_start", "stage": "Thinking of the next question\u2026"}
+{"t": 1793994891.8419986, "event": "question", "qtype": "clarify", "text": "What specific aspects of originality are most important to you in an argumentative essay\u2014such as unique ideas, personal insights, or innovative arguments?"}
+{"t": 1793994892.2088478, "event": "ui_wait_end", "stage": "Thinking of the next question\u2026", "duration": 1394}
+{"t": 1793994957.7617517, "event": "ui_node_open", "turnId": "t0"}
+{"t": 1793994958.7712324, "event": "ui_node_open", "turnId": "t0"}
+{"t": 1793994958.990844, "event": "ui_node_open", "turnId": "t0"}
+{"t": 1794035882.5081437, "event": "session_start", "mode": "attrify", "dataset": "sample", "genre": "argumentative"}
+{"t": 1794035882.5101612, "event": "question", "qtype": "open_ended", "text": "Argumentative essays. What makes an argumentative essay good in your view? Describe something that matters to you in your own words."}
+{"t": 1794076949.8754294, "event": "ui_answer_submit", "turnId": "t0", "length": 28}
+{"t": 1794076949.8786569, "event": "ui_wait_start", "stage": "One moment\u2026"}
+{"t": 1794076949.9073946, "event": "answer", "text": "make the essay sound orginal"}
+{"t": 1794076949.9409177, "event": "ui_wait_end", "stage": "One moment\u2026", "duration": 483}
+u2026"}
+{"t": 1794077089.326961, "event": "softness", "score": 77, "run_scores": [77, 78, 76], "specification": "make the essay sound orginal", "policy": "clarify"}
+{"t": 1794077089.9057767, "event": "ui_scored", "turnId": "t0", "softness": 77}
+{"t": 1794077089.9057767, "event": "ui_wait_end", "stage": "Working out how open-ended this is\u2026", "duration": 139658}
+{"t": 1794077089.9057767, "event": "ui_wait_start", "stage": "Thinking of the next question\u2026"}
+{"t": 1794077091.2641227, "event": "question", "qtype": "clarify", "text": "What specific elements or techniques do you believe contribute to an essay sounding original, such as unique perspectives, personal anecdotes, or creative language?"}
+{"t": 1794077091.3200574, "event": "ui_wait_end", "stage": "Thinking of the next question\u2026", "duration": 1733}
